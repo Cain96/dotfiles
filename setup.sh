@@ -1,9 +1,15 @@
 #!/bin/bash
 
- DOT_FILES=(.bashrc .bash_profile .gitignore .gitconfig)
+DOT_FILES=(mac/.bashrc mac/.bash_profile  common/git/.gitignore_global common/git/.gitconfig)
 
- for file in ${DOT_FILES[@]}
- do
-     ln -s $HOME/dotfiles/$file $HOME/$file
- done
+currentdir=$(cd $(dirname $0); pwd)
+for file in ${DOT_FILES[@]}; do
+    # ファイル名の取得
+    if [[ $file =~ (.*\/)*(.*) ]]; then
+        filename=${BASH_REMATCH[2]}
+        ln -sf $currentdir/$file $HOME/$filename
+    fi
+done
 
+XONSH_BASEDIR=$currentdir/common/.config/xonsh/
+ln -sf $XONSH_BASEDIR $HOME/.config/xonsh

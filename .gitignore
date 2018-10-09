@@ -7,8 +7,8 @@
 common/.config/google-chrome
 
 # allow any
-!./installer.sh
-!./setup.sh
+!installer.sh
+!setup.sh
 
 !common/programming.sh
 
