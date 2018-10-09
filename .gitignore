@@ -1,5 +1,34 @@
-.metadata/
-.idea/
-*.iml
-.DStore
-.DS_Store
+# https://qiita.com/Hi-king/items/a8485557095692f1bf13
+## .gitignore ##
+# ignore all
+*
+!*/
+
+common/.config/google-chrome
+
+# allow any
+!./installer.sh
+!./setup.sh
+
+!common/programming.sh
+
+# git
+!common/git/.gitconfig
+!common/git/.gitignore_global
+
+# jetbrains
+!common/jetbrains/*/settings.jar
+
+# xonsh
+!common/.config/xonsh/commands/__init__.py
+!common/.config/xonsh/commands/*.xsh
+!common/.config/xonsh/lib/__init__.py
+!common/.config/xonsh/lib/*.xsh
+!common/.config/xonsh/rc.xsh
+
+# bash
+!mac/.bash_profile
+!mac/.bashrc
+
+!Makefile
+!README.md

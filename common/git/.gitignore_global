@@ -1,0 +1,7 @@
+.metadata/
+.idea/*
+*.iml
+.DStore
+.DS_Store
+*.swp
+vendor/bundler/
