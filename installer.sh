@@ -11,6 +11,13 @@ brew install caskroom/cask/brew-cask
 # terminal
 brew cask install iterm2
 
+# font
+brew tap sanemat/font
+brew install ricty --with-powerline
+ricty_version=`ls /usr/local/Cellar/ricty | tail -1`
+cp -f /usr/local/Cellar/ricty/$ricty_version/share/fonts/Ricty*.ttf ~/Library/Fonts/
+fc-cache -vf
+
 # tool
 #brew cask install dropbox
 #brew cask install google-chrome
@@ -61,3 +68,9 @@ pip install numpy
 pip install requests
 pip install xonsh-docker-tabcomplete
 pip install xontrib-readable-traceback
+
+## neovim
+brew install neovim/neovim/neovim
+pip install neovim
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein_installer.sh
+rm dein_installer.sh

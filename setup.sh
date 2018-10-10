@@ -13,3 +13,6 @@ done
 
 XONSH_BASEDIR=$currentdir/common/.config/xonsh/
 ln -sf $XONSH_BASEDIR $HOME/.config/xonsh
+
+VIM_BASEDIR=$currentdir/common/.config/nvim/
+ln -sf $VIM_BASEDIR $HOME/.config/nvim

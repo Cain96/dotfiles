@@ -19,6 +19,12 @@ common/.config/google-chrome
 # jetbrains
 !common/jetbrains/*/settings.jar
 
+# vim / neovim
+!common/.config/nvim/init.vim
+!common/.config/nvim/dein.toml
+!common/.config/nvim/dein_lazy.toml
+!common/.config/nvim/plugins/*.vim
+
 # xonsh
 !common/.config/xonsh/commands/__init__.py
 !common/.config/xonsh/commands/*.xsh
