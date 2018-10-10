@@ -39,10 +39,10 @@ brew install postgresql
 brew services start postgresql
 
 # set up symbolic link
-./setup.sh
+source ./setup.sh
 
 # set up programming
-common/programming.sh
+source common/programming.sh
 
 # upgrade pip
 pip install --upgrade setuptools

@@ -5,8 +5,8 @@ import os.path
 sys.path.append($XONSH_CONFIG_DIR)
 
 # エディタ
-$EDITOR = '/usr/local/bin/vim'
-$VISUAL = '/usr/local/bin/vim'
+$EDITOR = '/usr/local/bin/nvim'
+$VISUAL = '/usr/local/bin/nvim'
 
 # Encoding
 $LANG="ja_JP.UTF-8"
@@ -83,10 +83,12 @@ aliases["rm"] = "rm -v"
 aliases["up"] = "cd .."
 aliases["f"] = "open ."
 
-## vim
+## vim / neovim
+aliases["vim"] = "nvim"
 aliases["v"] = "vim"
 aliases["vi"] = "vim"
-aliases["vrc"] = "vim ~/.config/xonsh/rc.xsh"
+aliases["vx"] = "vim ~/.config/xonsh/rc.xsh"
+aliases["vrc"] = "vim ~/.config/nvim/init.vim"
 aliases["vs"] = "vim ~/.ssh/config"
 
 from commands.cd import _cdf, _jj, _find_cd
@@ -97,9 +99,15 @@ aliases["fc"] = _find_cd
 from commands.cleanup import _cleanup
 aliases["cleanup"] = _cleanup
 
-## hub
+## git
 from commands.git import _git
 aliases["git"] = _git
+aliases["gc"] = "git checkout"
+aliases["gs"] = "git status"
+aliases["gp"] = "git push"
+aliases["gl"] = "git log"
+from commands.gpush import _gpush
+aliases["gpush"] = _gpush
 
 ## ghq
 from commands.ghq import _cd_local_repo, _cd_remote_repo
@@ -110,6 +118,12 @@ aliases["gh"] = _cd_remote_repo
 from commands.pip import _update, _upgrade
 aliases["pip_update"] = _update
 aliases["pip_upgrade"] = _upgrade
+
+## docker + peco
+from commands.deco import _deco
+aliases["deco"] = _deco
+from commands.docker_cleanup import _docker_cleanup
+aliases["docker-cleanup"] = _docker_cleanup
 
 ## Django
 aliases["runserver"] = "python manage.py runserver"
