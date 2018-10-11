@@ -53,7 +53,7 @@ $COMPLETIONS_MENU_ROWS = 5
 $BASH_COMPLETIONS.append('/usr/local/etc/bash_completion.d/')
 
 # プロンプトの表記
-$PROMPT = "{INTENSE_YELLOW} [ {cwd} ] {GREEN}$ "
+$PROMPT = "{GREEN}{env_name: {}}{INTENSE_YELLOW} [ {cwd} ] {GREEN}$ "
 # 右にgit情報
 $RIGHT_PROMPT = "{gitstatus}"
 # 下部にuser, host情報を追加
@@ -133,9 +133,6 @@ aliases["webpack"] = "./node_modules/.bin/webpack --config webpack.config.js"
 aliases["circlevalid"] = "circleci config validate -c .circleci/config.yml"
 aliases["circlebuild"] = "circleci build circleci build .circleci/config.yml"
 
-# pathの追加
-$PATH.append("/usr/local/bin")
-
 # 直近のxonshjobをkill
 from commands.kill_last import _kill_last
 aliases['kill_last'] = _kill_last
@@ -166,6 +163,18 @@ def custom_keybindings(bindings, **kw):
 # xontrib
 ## Docker周りの補完
 xontrib load docker_tabcomplete
+
+## vox
+xontrib load vox
+
+from lib.vox import _vox_version
+@events.on_chdir
+def read_vox_version(olddir, newdir, **kw):
+    _vox_version(newdir)
+
+from commands.vox import _vox
+aliases["vo"] = _vox
+
 
 ## tracebackを省略し見やすくする
 xontrib load readable-traceback
