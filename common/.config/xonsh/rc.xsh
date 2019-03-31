@@ -132,6 +132,8 @@ aliases["webpack"] = "./node_modules/.bin/webpack --config webpack.config.js"
 ## circleci
 aliases["circlevalid"] = "circleci config validate -c .circleci/config.yml"
 aliases["circlebuild"] = "circleci build circleci build .circleci/config.yml"
+## latexdiff
+aliases["difftex"] = "latexdiff-vc --git -e utf8 --flatten -s COLOR -t CFONT -r master"
 
 # 直近のxonshjobをkill
 from commands.kill_last import _kill_last
@@ -213,3 +215,5 @@ lazy_module_dict = {
 for k,v in lazy_module_dict.items():
     t = "@lazyobject\ndef {}():\n    return importlib.import_module('{}')".format(k, v)
     exec(t)
+
+$DJANGO_READ_ENV_FILE = True

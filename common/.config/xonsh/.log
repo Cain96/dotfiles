@@ -1,0 +1,952 @@
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 107, in <module>
+    from commands.push import _push
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/imphooks.py", line 123, in get_code
+    code = execer.compile(src, glbs=ctx, locs=ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 132, in compile
+    tree = self.parse(input, ctx, mode=mode, filename=filename, transform=transform)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 93, in parse
+    tree, input = self._parse_ctx_free(input, mode=mode, filename=filename)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 229, in _parse_ctx_free
+    raise original_error from None
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 214, in _parse_ctx_free
+    debug_level=(self.debug_level > 2),
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 520, in parse
+    tree = self.parser.parse(input=s, lexer=self.lexer, debug=debug_level)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 331, in parse
+    return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 1199, in parseopt_notrack
+    tok = call_errorfunc(self.errorfunc, errtoken, self)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 193, in call_errorfunc
+    r = errorfunc(token)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 3262, in p_error
+    self._parse_error(msg, self.currloc(lineno=p.lineno, column=p.lexpos))
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 653, in _parse_error
+    raise err
+  File "<string>", line None
+SyntaxError: /Users/cain/.config/xonsh/commands/push.xsh:10:0: ('code:             ',)
+            git push origin @(current_branch)
+^
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 107, in <module>
+    from commands.push import _push
+ImportError: cannot load module 'commands.push' when get_code() returns None
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 107, in <module>
+    from commands.push import _push
+ImportError: cannot load module 'commands.push' when get_code() returns None
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 107, in <module>
+    from commands.push import _push
+ImportError: cannot load module 'commands.push' when get_code() returns None
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 107, in <module>
+    from commands.push import _push
+ImportError: cannot load module 'commands.push' when get_code() returns None
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 92, in <module>
+    from commands.cd import _cdf, _jj, _find_cd
+  File "/Users/cain/.config/xonsh/commands/__init__.py", line 4, in <module>
+    from .fzfcat import _fzfcat
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/imphooks.py", line 123, in get_code
+    code = execer.compile(src, glbs=ctx, locs=ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 132, in compile
+    tree = self.parse(input, ctx, mode=mode, filename=filename, transform=transform)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 93, in parse
+    tree, input = self._parse_ctx_free(input, mode=mode, filename=filename)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 239, in _parse_ctx_free
+    line, mode=mode, filename=filename, logical_input=True
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 229, in _parse_ctx_free
+    raise original_error from None
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 214, in _parse_ctx_free
+    debug_level=(self.debug_level > 2),
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 520, in parse
+    tree = self.parser.parse(input=s, lexer=self.lexer, debug=debug_level)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 331, in parse
+    return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 1199, in parseopt_notrack
+    tok = call_errorfunc(self.errorfunc, errtoken, self)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 193, in call_errorfunc
+    r = errorfunc(token)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 3262, in p_error
+    self._parse_error(msg, self.currloc(lineno=p.lineno, column=p.lexpos))
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 653, in _parse_error
+    raise err
+  File "<string>", line None
+SyntaxError: /Users/cain/.config/xonsh/commands/fzfcat.xsh:1:0: ('code:     ',)
+    fzf --reverse     --preview-window down:30     --bind ctrl-d:preview-down     --bind ctrl-u:preview-up     @(' '.join(args))
+^
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 92, in <module>
+    from commands.cd import _cdf, _jj, _find_cd
+  File "/Users/cain/.config/xonsh/commands/__init__.py", line 4, in <module>
+    from .fzfcat import _fzfcat
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/imphooks.py", line 123, in get_code
+    code = execer.compile(src, glbs=ctx, locs=ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 132, in compile
+    tree = self.parse(input, ctx, mode=mode, filename=filename, transform=transform)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 93, in parse
+    tree, input = self._parse_ctx_free(input, mode=mode, filename=filename)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 239, in _parse_ctx_free
+    line, mode=mode, filename=filename, logical_input=True
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 229, in _parse_ctx_free
+    raise original_error from None
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 214, in _parse_ctx_free
+    debug_level=(self.debug_level > 2),
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 520, in parse
+    tree = self.parser.parse(input=s, lexer=self.lexer, debug=debug_level)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 331, in parse
+    return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 1199, in parseopt_notrack
+    tok = call_errorfunc(self.errorfunc, errtoken, self)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 193, in call_errorfunc
+    r = errorfunc(token)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 3262, in p_error
+    self._parse_error(msg, self.currloc(lineno=p.lineno, column=p.lexpos))
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 653, in _parse_error
+    raise err
+  File "<string>", line None
+SyntaxError: /Users/cain/.config/xonsh/commands/fzfcat.xsh:1:0: ('code:     ',)
+    fzf --reverse     --preview-window down:30     --bind ctrl-d:preview-down     --bind ctrl-u:preview-up     @(' '.join(args))
+^
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 109, in <module>
+    from commands.greset import _greset
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/imphooks.py", line 123, in get_code
+    code = execer.compile(src, glbs=ctx, locs=ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 132, in compile
+    tree = self.parse(input, ctx, mode=mode, filename=filename, transform=transform)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 93, in parse
+    tree, input = self._parse_ctx_free(input, mode=mode, filename=filename)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 229, in _parse_ctx_free
+    raise original_error from None
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 214, in _parse_ctx_free
+    debug_level=(self.debug_level > 2),
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 520, in parse
+    tree = self.parser.parse(input=s, lexer=self.lexer, debug=debug_level)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 331, in parse
+    return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 1199, in parseopt_notrack
+    tok = call_errorfunc(self.errorfunc, errtoken, self)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 193, in call_errorfunc
+    r = errorfunc(token)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 3262, in p_error
+    self._parse_error(msg, self.currloc(lineno=p.lineno, column=p.lexpos))
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 653, in _parse_error
+    raise err
+  File "<string>", line None
+SyntaxError: /Users/cain/.config/xonsh/commands/greset.xsh:5:87: ('code: (',)
+        changed_files = $(fzfcat --preview 'git diff --color=always --cached {}'.format(git diff --name-only --staged))
+                                                                                       ^
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 92, in <module>
+    from commands.cd import _cdf, _jj, _find_cd
+  File "/Users/cain/.config/xonsh/commands/__init__.py", line 4, in <module>
+    from .fzfcat import _fzfcat
+ModuleNotFoundError: No module named 'commands.fzfcat'
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 92, in <module>
+    from commands.cd import _cdf, _jj, _find_cd
+  File "/Users/cain/.config/xonsh/commands/__init__.py", line 4, in <module>
+    from .fzfcat import _fzfcat
+ModuleNotFoundError: No module named 'commands.fzfcat'
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 92, in <module>
+    from commands.cd import _cdf, _jj, _find_cd
+  File "/Users/cain/.config/xonsh/commands/__init__.py", line 4, in <module>
+    from .fzfcat import _fzfcat
+ModuleNotFoundError: No module named 'commands.fzfcat'
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 109, in <module>
+    from commands.greset import _greset
+ModuleNotFoundError: No module named 'commands.greset'
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 92, in <module>
+    from commands.cd import _cdf, _jj, _find_cd
+  File "/Users/cain/.config/xonsh/commands/__init__.py", line 3, in <module>
+    from .deco import _deco
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/imphooks.py", line 123, in get_code
+    code = execer.compile(src, glbs=ctx, locs=ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 132, in compile
+    tree = self.parse(input, ctx, mode=mode, filename=filename, transform=transform)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 93, in parse
+    tree, input = self._parse_ctx_free(input, mode=mode, filename=filename)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 229, in _parse_ctx_free
+    raise original_error from None
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 214, in _parse_ctx_free
+    debug_level=(self.debug_level > 2),
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 520, in parse
+    tree = self.parser.parse(input=s, lexer=self.lexer, debug=debug_level)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 331, in parse
+    return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 1199, in parseopt_notrack
+    tok = call_errorfunc(self.errorfunc, errtoken, self)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 193, in call_errorfunc
+    r = errorfunc(token)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 3262, in p_error
+    self._parse_error(msg, self.currloc(lineno=p.lineno, column=p.lexpos))
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 653, in _parse_error
+    raise err
+  File "<string>", line None
+SyntaxError: /Users/cain/.config/xonsh/commands/deco.xsh:5:30: ('code: \n',)
+        elif args[0] == "exec"
+                              ^
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 92, in <module>
+    from commands.cd import _cdf, _jj, _find_cd
+  File "/Users/cain/.config/xonsh/commands/__init__.py", line 3, in <module>
+    from .deco import _deco
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/imphooks.py", line 123, in get_code
+    code = execer.compile(src, glbs=ctx, locs=ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 132, in compile
+    tree = self.parse(input, ctx, mode=mode, filename=filename, transform=transform)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 93, in parse
+    tree, input = self._parse_ctx_free(input, mode=mode, filename=filename)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 229, in _parse_ctx_free
+    raise original_error from None
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 214, in _parse_ctx_free
+    debug_level=(self.debug_level > 2),
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 520, in parse
+    tree = self.parser.parse(input=s, lexer=self.lexer, debug=debug_level)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 331, in parse
+    return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 1199, in parseopt_notrack
+    tok = call_errorfunc(self.errorfunc, errtoken, self)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 193, in call_errorfunc
+    r = errorfunc(token)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 3258, in p_error
+    p.value, self.currloc(lineno=p.lineno, column=p.lexpos)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 653, in _parse_error
+    raise err
+  File "<string>", line None
+SyntaxError: /Users/cain/.config/xonsh/commands/deco.xsh:5:24: "
+        elif args[0] == "exec:
+                        ^
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 92, in <module>
+    from commands.cd import _cdf, _jj, _find_cd
+  File "/Users/cain/.config/xonsh/commands/__init__.py", line 3, in <module>
+    from .deco import _deco
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/imphooks.py", line 123, in get_code
+    code = execer.compile(src, glbs=ctx, locs=ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 132, in compile
+    tree = self.parse(input, ctx, mode=mode, filename=filename, transform=transform)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 93, in parse
+    tree, input = self._parse_ctx_free(input, mode=mode, filename=filename)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 229, in _parse_ctx_free
+    raise original_error from None
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 214, in _parse_ctx_free
+    debug_level=(self.debug_level > 2),
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 520, in parse
+    tree = self.parser.parse(input=s, lexer=self.lexer, debug=debug_level)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 331, in parse
+    return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 1199, in parseopt_notrack
+    tok = call_errorfunc(self.errorfunc, errtoken, self)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 193, in call_errorfunc
+    r = errorfunc(token)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 3262, in p_error
+    self._parse_error(msg, self.currloc(lineno=p.lineno, column=p.lexpos))
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 653, in _parse_error
+    raise err
+  File "<string>", line None
+SyntaxError: /Users/cain/.config/xonsh/commands/deco.xsh:7:31: ('code: \n',)
+        elif args[0] == "start"
+                               ^
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 92, in <module>
+    from commands.cd import _cdf, _jj, _find_cd
+  File "/Users/cain/.config/xonsh/commands/__init__.py", line 3, in <module>
+    from .deco import _deco
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/imphooks.py", line 123, in get_code
+    code = execer.compile(src, glbs=ctx, locs=ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 132, in compile
+    tree = self.parse(input, ctx, mode=mode, filename=filename, transform=transform)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 93, in parse
+    tree, input = self._parse_ctx_free(input, mode=mode, filename=filename)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 229, in _parse_ctx_free
+    raise original_error from None
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 214, in _parse_ctx_free
+    debug_level=(self.debug_level > 2),
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 520, in parse
+    tree = self.parser.parse(input=s, lexer=self.lexer, debug=debug_level)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 331, in parse
+    return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 1199, in parseopt_notrack
+    tok = call_errorfunc(self.errorfunc, errtoken, self)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 193, in call_errorfunc
+    r = errorfunc(token)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 3262, in p_error
+    self._parse_error(msg, self.currloc(lineno=p.lineno, column=p.lexpos))
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 653, in _parse_error
+    raise err
+  File "<string>", line None
+SyntaxError: /Users/cain/.config/xonsh/commands/deco.xsh:14:19: ('code: exec',)
+            docker exec -it @((deco ps).strip()) /bin/bash
+                   ^
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 92, in <module>
+    from commands.cd import _cdf, _jj, _find_cd
+  File "/Users/cain/.config/xonsh/commands/__init__.py", line 3, in <module>
+    from .deco import _deco
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/imphooks.py", line 123, in get_code
+    code = execer.compile(src, glbs=ctx, locs=ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 132, in compile
+    tree = self.parse(input, ctx, mode=mode, filename=filename, transform=transform)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 93, in parse
+    tree, input = self._parse_ctx_free(input, mode=mode, filename=filename)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 229, in _parse_ctx_free
+    raise original_error from None
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 214, in _parse_ctx_free
+    debug_level=(self.debug_level > 2),
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 520, in parse
+    tree = self.parser.parse(input=s, lexer=self.lexer, debug=debug_level)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 331, in parse
+    return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 1199, in parseopt_notrack
+    tok = call_errorfunc(self.errorfunc, errtoken, self)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 193, in call_errorfunc
+    r = errorfunc(token)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 3262, in p_error
+    self._parse_error(msg, self.currloc(lineno=p.lineno, column=p.lexpos))
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 653, in _parse_error
+    raise err
+  File "<string>", line None
+SyntaxError: /Users/cain/.config/xonsh/commands/deco.xsh:14:19: ('code: exec',)
+            docker exec -it @((deco ps).strip()) /bin/bash
+                   ^
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 92, in <module>
+    from commands.cd import _cdf, _jj, _find_cd
+  File "/Users/cain/.config/xonsh/commands/__init__.py", line 4
+    from .docker-cleanup import _docker-cleanup
+                ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 92, in <module>
+    from commands.cd import _cdf, _jj, _find_cd
+  File "/Users/cain/.config/xonsh/commands/__init__.py", line 4, in <module>
+    from .docker_cleanup import _docker_cleanup
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/imphooks.py", line 123, in get_code
+    code = execer.compile(src, glbs=ctx, locs=ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 132, in compile
+    tree = self.parse(input, ctx, mode=mode, filename=filename, transform=transform)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 93, in parse
+    tree, input = self._parse_ctx_free(input, mode=mode, filename=filename)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 229, in _parse_ctx_free
+    raise original_error from None
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 214, in _parse_ctx_free
+    debug_level=(self.debug_level > 2),
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 520, in parse
+    tree = self.parser.parse(input=s, lexer=self.lexer, debug=debug_level)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 331, in parse
+    return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 1199, in parseopt_notrack
+    tok = call_errorfunc(self.errorfunc, errtoken, self)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 193, in call_errorfunc
+    r = errorfunc(token)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 3262, in p_error
+    self._parse_error(msg, self.currloc(lineno=p.lineno, column=p.lexpos))
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 653, in _parse_error
+    raise err
+  File "<string>", line None
+SyntaxError: /Users/cain/.config/xonsh/commands/docker_cleanup.xsh:1:11: ('code: -',)
+def _docker-cleanup(args, stdin=None):
+           ^
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 143, in <module>
+    get_history()
+  File "/Users/cain/.config/xonsh/lib/history.xsh", line 13, in get_history
+    file_hist = [ json.load(open(f))['data']['cmds'] for f in files ]
+  File "/Users/cain/.config/xonsh/lib/history.xsh", line 13, in <listcomp>
+    file_hist = [ json.load(open(f))['data']['cmds'] for f in files ]
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/__init__.py", line 296, in load
+    parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/base_shell.py", line 360, in default
+    run_compiled_code(code, self.ctx, None, "single")
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/lib/history.xsh", line 1, in <module>
+    # 履歴をpecoに流す
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/built_ins.py", line 943, in subproc_captured_hiddenobject
+    return run_subproc(cmds, captured="hiddenobject")
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/built_ins.py", line 906, in run_subproc
+    command.end()
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 2104, in end
+    self._end(tee_output=tee_output)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 2112, in _end
+    for _ in self.tee_stdout():
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 2025, in tee_stdout
+    for line in self.iterraw():
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 1990, in iterraw
+    proc.wait()
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 892, in wait
+    rtn = self.proc.wait(timeout=timeout)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/subprocess.py", line 971, in wait
+    return self._wait(timeout=timeout)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/subprocess.py", line 1601, in _wait
+    (pid, sts) = self._try_wait(0)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/subprocess.py", line 1559, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 790, in _signal_int
+    signal.pthread_kill(threading.get_ident(), signal.SIGINT)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 790, in _signal_int
+    signal.pthread_kill(threading.get_ident(), signal.SIGINT)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 790, in _signal_int
+    signal.pthread_kill(threading.get_ident(), signal.SIGINT)
+  [Previous line repeated 322 more times]
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 786, in _signal_int
+    self.send_signal(signum)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 940, in send_signal
+    rtn = self.proc.send_signal(signal)
+RecursionError: maximum recursion depth exceeded
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/base_shell.py", line 360, in default
+    run_compiled_code(code, self.ctx, None, "single")
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/lib/history.xsh", line 1, in <module>
+    # 履歴をpecoに流す
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/built_ins.py", line 943, in subproc_captured_hiddenobject
+    return run_subproc(cmds, captured="hiddenobject")
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/built_ins.py", line 906, in run_subproc
+    command.end()
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 2104, in end
+    self._end(tee_output=tee_output)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 2112, in _end
+    for _ in self.tee_stdout():
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 2025, in tee_stdout
+    for line in self.iterraw():
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 1990, in iterraw
+    proc.wait()
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 892, in wait
+    rtn = self.proc.wait(timeout=timeout)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/subprocess.py", line 971, in wait
+    return self._wait(timeout=timeout)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/subprocess.py", line 1601, in _wait
+    (pid, sts) = self._try_wait(0)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/subprocess.py", line 1559, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 790, in _signal_int
+    signal.pthread_kill(threading.get_ident(), signal.SIGINT)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 790, in _signal_int
+    signal.pthread_kill(threading.get_ident(), signal.SIGINT)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 790, in _signal_int
+    signal.pthread_kill(threading.get_ident(), signal.SIGINT)
+  [Previous line repeated 322 more times]
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 786, in _signal_int
+    self.send_signal(signum)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/proc.py", line 940, in send_signal
+    rtn = self.proc.send_signal(signal)
+RecursionError: maximum recursion depth exceeded
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 143, in <module>
+    get_history()
+  File "/Users/cain/.config/xonsh/lib/history.xsh", line 13, in get_history
+    file_hist = [ json.load(open(f))['data']['cmds'] for f in files ]
+  File "/Users/cain/.config/xonsh/lib/history.xsh", line 13, in <listcomp>
+    file_hist = [ json.load(open(f))['data']['cmds'] for f in files ]
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/__init__.py", line 296, in load
+    parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 145, in <module>
+    get_history()
+  File "/Users/cain/.config/xonsh/lib/history.xsh", line 13, in get_history
+    file_hist = [ json.load(open(f))['data']['cmds'] for f in files ]
+  File "/Users/cain/.config/xonsh/lib/history.xsh", line 13, in <listcomp>
+    file_hist = [ json.load(open(f))['data']['cmds'] for f in files ]
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/__init__.py", line 296, in load
+    parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/site-packages/xonsh/built_ins.py", line 547, in _run_binary
+    p = self.cls(self.cmd, bufsize=bufsize, **kwargs)
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/site-packages/xonsh/proc.py", line 582, in __init__
+    *args, stdin=stdin, stdout=stdout, stderr=stderr, **kwargs
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/subprocess.py", line 1344, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'pyenv init -': 'pyenv init -'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/site-packages/xonsh/proc.py", line 1843, in __init__
+    proc = spec.run(pipeline_group=pipeline_group)
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/site-packages/xonsh/built_ins.py", line 537, in run
+    p = self._run_binary(kwargs)
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/site-packages/xonsh/built_ins.py", line 558, in _run_binary
+    raise XonshError(e)
+xonsh.tools.XonshError: xonsh: subprocess mode: command not found: pyenv init -
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/site-packages/xonsh/built_ins.py", line 547, in _run_binary
+    p = self.cls(self.cmd, bufsize=bufsize, **kwargs)
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/site-packages/xonsh/proc.py", line 582, in __init__
+    *args, stdin=stdin, stdout=stdout, stderr=stderr, **kwargs
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/subprocess.py", line 1344, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'pyenv virtualenv-init -': 'pyenv virtualenv-init -'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/site-packages/xonsh/proc.py", line 1843, in __init__
+    proc = spec.run(pipeline_group=pipeline_group)
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/site-packages/xonsh/built_ins.py", line 537, in run
+    p = self._run_binary(kwargs)
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/site-packages/xonsh/built_ins.py", line 558, in _run_binary
+    raise XonshError(e)
+xonsh.tools.XonshError: xonsh: subprocess mode: command not found: pyenv virtualenv-init -
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 145, in <module>
+    get_history()
+  File "/Users/cain/.config/xonsh/lib/history.xsh", line 13, in get_history
+    file_hist = [ json.load(open(f))['data']['cmds'] for f in files ]
+  File "/Users/cain/.config/xonsh/lib/history.xsh", line 13, in <listcomp>
+    file_hist = [ json.load(open(f))['data']['cmds'] for f in files ]
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/json/__init__.py", line 299, in load
+    parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/json/__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Users/cain/.pyenv/versions/3.6.3/lib/python3.6/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 134, in <module>
+    from commands.vox import _vox
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/imphooks.py", line 123, in get_code
+    code = execer.compile(src, glbs=ctx, locs=ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 132, in compile
+    tree = self.parse(input, ctx, mode=mode, filename=filename, transform=transform)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 93, in parse
+    tree, input = self._parse_ctx_free(input, mode=mode, filename=filename)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 229, in _parse_ctx_free
+    raise original_error from None
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 214, in _parse_ctx_free
+    debug_level=(self.debug_level > 2),
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 520, in parse
+    tree = self.parser.parse(input=s, lexer=self.lexer, debug=debug_level)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 331, in parse
+    return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 1199, in parseopt_notrack
+    tok = call_errorfunc(self.errorfunc, errtoken, self)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 193, in call_errorfunc
+    r = errorfunc(token)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 3262, in p_error
+    self._parse_error(msg, self.currloc(lineno=p.lineno, column=p.lexpos))
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 653, in _parse_error
+    raise err
+  File "<string>", line None
+SyntaxError: /Users/cain/.config/xonsh/commands/vox.xsh:14:13: ('code: !',)
+        elif(!os.path.isfile("./.python-version")):
+             ^
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 214, in _parse_ctx_free
+    debug_level=(self.debug_level > 2),
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 520, in parse
+    tree = self.parser.parse(input=s, lexer=self.lexer, debug=debug_level)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 331, in parse
+    return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 1199, in parseopt_notrack
+    tok = call_errorfunc(self.errorfunc, errtoken, self)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 193, in call_errorfunc
+    r = errorfunc(token)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 3262, in p_error
+    self._parse_error(msg, self.currloc(lineno=p.lineno, column=p.lexpos))
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 653, in _parse_error
+    raise err
+  File "<string>", line None
+SyntaxError: /Users/cain/.config/xonsh/lib/vox.xsh:4:16: ('code: (',)
+    ![return str('/'.join(os.p]ath.abspath(path).split('/')[0:-1-f])))
+                ^
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 129, in <module>
+    from lib.vox import _vox_version
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/imphooks.py", line 123, in get_code
+    code = execer.compile(src, glbs=ctx, locs=ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 132, in compile
+    tree = self.parse(input, ctx, mode=mode, filename=filename, transform=transform)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 93, in parse
+    tree, input = self._parse_ctx_free(input, mode=mode, filename=filename)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 306, in _parse_ctx_free
+    raise original_error
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 214, in _parse_ctx_free
+    debug_level=(self.debug_level > 2),
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 520, in parse
+    tree = self.parser.parse(input=s, lexer=self.lexer, debug=debug_level)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 331, in parse
+    return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 1199, in parseopt_notrack
+    tok = call_errorfunc(self.errorfunc, errtoken, self)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 193, in call_errorfunc
+    r = errorfunc(token)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 3258, in p_error
+    p.value, self.currloc(lineno=p.lineno, column=p.lexpos)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 653, in _parse_error
+    raise err
+  File "<string>", line None
+SyntaxError: /Users/cain/.config/xonsh/lib/vox.xsh:4:66: Unmatched ")" at line 4, column 66
+    return str('/'.join(os.path.abspath(path).split('/')[0:-1-f])))
+                                                                  ^
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 129, in <module>
+    from lib.vox import _vox_version
+ImportError: cannot import name '_vox_version' from 'lib.vox' (/Users/cain/.config/xonsh/lib/vox.xsh)
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 129, in <module>
+    from lib.vox import _vox_version
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/imphooks.py", line 123, in get_code
+    code = execer.compile(src, glbs=ctx, locs=ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 132, in compile
+    tree = self.parse(input, ctx, mode=mode, filename=filename, transform=transform)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 93, in parse
+    tree, input = self._parse_ctx_free(input, mode=mode, filename=filename)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 229, in _parse_ctx_free
+    raise original_error from None
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/execer.py", line 214, in _parse_ctx_free
+    debug_level=(self.debug_level > 2),
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 520, in parse
+    tree = self.parser.parse(input=s, lexer=self.lexer, debug=debug_level)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 331, in parse
+    return self.parseopt_notrack(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 1199, in parseopt_notrack
+    tok = call_errorfunc(self.errorfunc, errtoken, self)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/ply/ply/yacc.py", line 193, in call_errorfunc
+    r = errorfunc(token)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 3262, in p_error
+    self._parse_error(msg, self.currloc(lineno=p.lineno, column=p.lexpos))
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/parsers/base.py", line 653, in _parse_error
+    raise err
+  File "<string>", line None
+SyntaxError: /Users/cain/.config/xonsh/lib/vox.xsh:9:14: ('code: =',)
+    while((pp = parentpath(path, f)) != $HOME):
+              ^
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 170, in <module>
+    from lib.vox import _vox_version
+  File "/Users/cain/.config/xonsh/lib/vox.xsh", line 2, in <module>
+    from xonsh.xonsh.prompt.env import env_name
+ModuleNotFoundError: No module named 'xonsh.xonsh'
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 142, in <module>
+    get_history()
+  File "/Users/cain/.config/xonsh/lib/history.xsh", line 13, in get_history
+    file_hist = [ json.load(open(f))['data']['cmds'] for f in files ]
+  File "/Users/cain/.config/xonsh/lib/history.xsh", line 13, in <listcomp>
+    file_hist = [ json.load(open(f))['data']['cmds'] for f in files ]
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/__init__.py", line 296, in load
+    parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 142, in <module>
+    get_history()
+  File "/Users/cain/.config/xonsh/lib/history.xsh", line 13, in get_history
+    file_hist = [ json.load(open(f))['data']['cmds'] for f in files ]
+  File "/Users/cain/.config/xonsh/lib/history.xsh", line 13, in <listcomp>
+    file_hist = [ json.load(open(f))['data']['cmds'] for f in files ]
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/__init__.py", line 296, in load
+    parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/base_shell.py", line 360, in default
+    run_compiled_code(code, self.ctx, None, "single")
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/lib/history.xsh", line 1, in <module>
+    # 履歴をpecoに流す
+NameError: name 'report' is not defined
+Traceback (most recent call last):
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/environ.py", line 1286, in xonsh_script_run_control
+    run_script_with_cache(filename, execer, ctx)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 162, in run_script_with_cache
+    run_compiled_code(ccode, glb, loc, mode)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/site-packages/xonsh/codecache.py", line 67, in run_compiled_code
+    func(code, glb, loc)
+  File "/Users/cain/.config/xonsh/rc.xsh", line 144, in <module>
+    get_history()
+  File "/Users/cain/.config/xonsh/lib/history.xsh", line 13, in get_history
+    file_hist = [ json.load(open(f))['data']['cmds'] for f in files ]
+  File "/Users/cain/.config/xonsh/lib/history.xsh", line 13, in <listcomp>
+    file_hist = [ json.load(open(f))['data']['cmds'] for f in files ]
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/__init__.py", line 296, in load
+    parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Users/cain/.pyenv/versions/3.7.0/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
