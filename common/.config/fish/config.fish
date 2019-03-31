@@ -10,6 +10,13 @@ set -gx PYENV_ROOT "$HOME/.pyenv"
 set -x PATH $PATH "$PYENV_ROOT/bin"
 status --is-interactive; and . (pyenv init - | psub)
 
+# django
+set -x DJANGO_READ_ENV_FILE True
+balias runserver 'python manage.py runserver'
+balias webpack './node_modules/.bin/webpack --config webpack.config.js'
+balias circle_valid 'circleci config validate -c .circleci/config.yml'
+balias circle_build 'circleci build circleci build .circleci/config.yml'
+
 function fish_user_key_bindings
   # ghq の選択
   bind \cl peco_select_ghq_repository
@@ -58,4 +65,3 @@ set GHQ_SELECTOR peco
 
 # bobthefish
 set -g theme_display_date no
-set -g theme_color_scheme dracula
