@@ -32,6 +32,11 @@ common/.config/google-chrome
 !common/.config/xonsh/lib/*.xsh
 !common/.config/xonsh/rc.xsh
 
+# fish
+!common/.config/fish/comletions/*.fish
+!common/.config/fish/functions/*.fish
+!common/.config/fishfile
+
 # bash
 !mac/.bash_profile
 !mac/.bashrc
