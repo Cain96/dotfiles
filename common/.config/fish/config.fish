@@ -5,6 +5,12 @@ set -gx MANPAGER "less -isr"
 set -gx PAGER "lv -c"
 set -gx EDITOR nvim
 
+set -x PATH $PATH "$HOME/bin"
+
+# rbenv
+set -x PATH $HOME/.rbenv/bin $PATH
+status --is-interactive; and source (rbenv init -|psub)
+
 # pyenv
 set -gx PYENV_ROOT "$HOME/.pyenv"
 set -x PATH $PATH "$PYENV_ROOT/bin"
