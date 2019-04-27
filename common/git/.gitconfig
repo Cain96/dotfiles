@@ -3,6 +3,7 @@
 	email = tk.777.k@gmail.com
 [core]
 	excludesfile = /users/cain/.gitignore_global
+	pager = less
 [ghq]
 	root = /Users/cain/workspace
 [difftool "sourcetree"]
