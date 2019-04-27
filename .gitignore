@@ -33,7 +33,7 @@ common/.config/google-chrome
 !common/.config/xonsh/rc.xsh
 
 # fish
-!common/.config/fish/comletions/*.fish
+!common/.config/fish/completions/*.fish
 !common/.config/fish/functions/*.fish
 !common/.config/fishfile
 
