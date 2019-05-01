@@ -7,9 +7,12 @@ set -gx EDITOR nvim
 
 set -x PATH $PATH "$HOME/bin"
 
+# direnv
+eval (direnv hook fish)
+
 # rbenv
 set -x PATH $HOME/.rbenv/bin $PATH
-status --is-interactive; and source (rbenv init -|psub)
+source (rbenv init -|psub)
 
 # pyenv
 set -gx PYENV_ROOT "$HOME/.pyenv"
