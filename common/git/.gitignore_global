@@ -1,9 +1,9 @@
 .metadata/
-.idea/*
+.idea/
 *.iml
 .DStore
 .DS_Store
 *.swp
-vendor/bundler/
-vendor/bundle/
+/vendor/bundler/
+/vendor/bundle/
 .envrc
