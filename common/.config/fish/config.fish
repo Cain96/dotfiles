@@ -26,6 +26,14 @@ balias webpack './node_modules/.bin/webpack --config webpack.config.js'
 balias circle_valid 'circleci config validate -c .circleci/config.yml'
 balias circle_build 'circleci build circleci build .circleci/config.yml'
 
+# android studio
+set -x ANDROID_HOME "$HOME/Library/Android/sdk"
+set -x PATH $PATH "$ANDROID_HOME/platform-tools"
+set -x PATH $PATH "$ANDROID_HOME/tools/bin"
+
+set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
+set -x PATH $PATH "$JAVA_HOME/bin"
+
 function fish_user_key_bindings
   # ghq の選択
   bind \cl peco_select_ghq_repository
