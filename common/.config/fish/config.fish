@@ -6,6 +6,7 @@ set -gx PAGER "lv -c"
 set -gx EDITOR nvim
 
 set -x PATH $PATH "$HOME/bin"
+set -gx WORKSPACE "$HOME/workspace"
 
 # direnv
 eval (direnv hook fish)
