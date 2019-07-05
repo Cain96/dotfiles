@@ -48,6 +48,10 @@ function fish_user_key_bindings
   bind \cx\cr peco_recentd
 end
 
+# go
+set -x GOPATH "$HOME/go"
+set -x PATH $PATH "$GOPATH/bin"
+
 # alias
 balias ls 'ls -G'
 balias l 'ls -l'
