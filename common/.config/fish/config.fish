@@ -35,6 +35,14 @@ set -x PATH $PATH "$ANDROID_HOME/tools/bin"
 set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
 set -x PATH $PATH "$JAVA_HOME/bin"
 
+# go
+set -x GOPATH "$WORKSPACE/go"
+set -x PATH $PATH "$GOPATH/bin"
+set -x PATH $PATH "$GOROOT/bin"
+
+# node
+set -x PATH $HOME/.nodebrew/current/bin $PATH
+
 function fish_user_key_bindings
   # ghq の選択
   bind \cl peco_select_ghq_repository

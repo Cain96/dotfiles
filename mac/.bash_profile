@@ -22,4 +22,8 @@ fi
 
 # xonsh
 alias x='xonsh'
-x
+
+fish
+# fish
+export PATH=$PATH:/Users/cain/bin/slack-theme
+export SLACK_THEME_SHELL_PROFILE="/Users/cain/.bash_profile"

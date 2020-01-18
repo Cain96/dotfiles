@@ -10,11 +10,13 @@ repo = 'tpope/vim-endwise'
 [[plugins]]
 repo = 'Townk/vim-autoclose'
 
-[[plugins]]
-repo = 'joshdick/onedark.vim'
+[[plugins]] # color schema
+repo = 'trevordmiller/nova-vim'
 hook_add = '''
-    colorscheme onedark
+  colorscheme nova
+  set background=dark
 '''
+
 
 [[plugins]]
 repo = 'w0rp/ale'
