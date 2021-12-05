@@ -1,18 +1,9 @@
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
 source ~/.bashrc
-
-# java
-export JAVA_HOME=`/usr/libexec/java_home -v "12"`
-export PATH=$JAVA_HOME/bin:$PATH
-
-# python
-export PYENV_ROOT="$HOME/.pyenv"
-if [ -d "${PYENV_ROOT}" ]; then
-    export PATH=${PYENV_ROOT}/bin:$PATH
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
-
-export DJANGO_READ_ENV_FILE='True'
 
 # ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -20,10 +11,12 @@ if
      which rbenv > /dev/null; then eval "$(rbenv init -)";
 fi
 
-# xonsh
-alias x='xonsh'
-
 fish
 # fish
 export PATH=$PATH:/Users/cain/bin/slack-theme
 export SLACK_THEME_SHELL_PROFILE="/Users/cain/.bash_profile"
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####

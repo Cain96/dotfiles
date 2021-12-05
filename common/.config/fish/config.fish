@@ -8,6 +8,9 @@ set -gx EDITOR nvim
 set -x PATH $PATH "$HOME/bin"
 set -gx WORKSPACE "$HOME/workspace"
 
+set -gx HISTSIZE 9999
+set -gx PROMPT_COMMAND $PROMPT_COMMAND "update_terminal_cwd;history -a;history -c;history -r;"
+
 # direnv
 eval (direnv hook fish)
 
@@ -15,33 +18,8 @@ eval (direnv hook fish)
 set -x PATH $HOME/.rbenv/bin $PATH
 source (rbenv init -|psub)
 
-# pyenv
-set -gx PYENV_ROOT "$HOME/.pyenv"
-set -x PATH $PATH "$PYENV_ROOT/bin"
-status --is-interactive; and . (pyenv init - | psub)
-
-# django
-set -x DJANGO_READ_ENV_FILE True
-balias runserver 'python manage.py runserver'
-balias webpack './node_modules/.bin/webpack --config webpack.config.js'
-balias circle_valid 'circleci config validate -c .circleci/config.yml'
-balias circle_build 'circleci build circleci build .circleci/config.yml'
-
-# android studio
-set -x ANDROID_HOME "$HOME/Library/Android/sdk"
-set -x PATH $PATH "$ANDROID_HOME/platform-tools"
-set -x PATH $PATH "$ANDROID_HOME/tools/bin"
-
-set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
-set -x PATH $PATH "$JAVA_HOME/bin"
-
-# go
-set -x GOPATH "$WORKSPACE/go"
-set -x PATH $PATH "$GOPATH/bin"
-set -x PATH $PATH "$GOROOT/bin"
-
 # node
-set -x PATH $HOME/.nodebrew/current/bin $PATH
+status --is-interactive; and source (nodenv init -|psub)
 
 function fish_user_key_bindings
   # ghq の選択
@@ -55,10 +33,6 @@ function fish_user_key_bindings
   # 最近のディレクトリへ移動
   bind \cx\cr peco_recentd
 end
-
-# go
-set -x GOPATH "$HOME/go"
-set -x PATH $PATH "$GOPATH/bin"
 
 # alias
 balias ls 'ls -G'
