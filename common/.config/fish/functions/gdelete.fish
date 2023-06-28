@@ -1,6 +1,6 @@
 function gdelete
-  set deleteBranches (git branch --merged | grep -vE '^\*|develop$|master$' | sed "s/  *//g")
-  set deleteRemoteBranches (git branch -r --merged | grep -vE '^\*|develop$|master$' | sed "s/  *//g")
+  set deleteBranches (git branch --merged | grep -vE '^\*|develop$|master$|main$' | sed "s/  *//g")
+  set deleteRemoteBranches (git branch -r --merged | grep -vE '^\*|develop$|master$|main$' | sed "s/  *//g")
   set deleteBranchesCount (count $deleteBranches)
   set deleteRemoteBranchesCount (count $deleteRemoteBranches)
 
