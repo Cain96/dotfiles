@@ -14,12 +14,11 @@ set -gx PROMPT_COMMAND $PROMPT_COMMAND "update_terminal_cwd;history -a;history -
 # direnv
 eval (direnv hook fish)
 
-# rbenv
-set -x PATH $HOME/.rbenv/bin $PATH
-source (rbenv init -|psub)
+# asdf
+source /usr/local/opt/asdf/libexec/asdf.fish
 
 # node
-status --is-interactive; and source (nodenv init -|psub)
+set -x PATH $PATH "$HOME/Library/pnpm"
 
 function fish_user_key_bindings
   # ghq の選択
