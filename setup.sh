@@ -1,18 +1,15 @@
 #!/bin/bash
 
-DOT_FILES=(mac/.bashrc mac/.bash_profile  common/git/.gitignore_global common/git/.gitconfig)
+# git
+GIT_BASEDIR=$currentdir/common/git/
+ln -sf $GIT_BASEDIR/.gitconfig $HOME/.gitconfig
+ln -sf $GIT_BASEDIR/.gitignore_global $HOME/.gitignore_global
 
-currentdir=$(cd $(dirname $0); pwd)
-for file in ${DOT_FILES[@]}; do
-    # ファイル名の取得
-    if [[ $file =~ (.*\/)*(.*) ]]; then
-        filename=${BASH_REMATCH[2]}
-        ln -sf $currentdir/$file $HOME/$filename
-    fi
-done
+# zsh
+ZSH_BASEDIR=$currentdir/common/.config/zsh/
+ln -sf $ZSH_BASEDIR/.zshrc $HOME/.zshrc
+ln -sf $ZSH_BASEDIR/settings/ $HOME/.config/zsh
 
-XONSH_BASEDIR=$currentdir/common/.config/xonsh/
-ln -sf $XONSH_BASEDIR $HOME/.config/xonsh
-
+# nvim
 VIM_BASEDIR=$currentdir/common/.config/nvim/
 ln -sf $VIM_BASEDIR $HOME/.config/nvim
