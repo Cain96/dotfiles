@@ -1,37 +1,27 @@
 [user]
-	email = tk.777.k@gmail.com
 	name = Kenta Kuroda
+	email = tk.777.k@gmail.com
 [core]
-	excludesfile = /Users/kenta-kuroda/.gitignore_global
-	pager = less
+	excludesfile = ~/.gitignore_global
+	ignorecase = false
+	quotepath = false
 [ghq]
 	root = ~/workspace
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 [alias]
 	co = checkout
 	cm = commit
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	refresh= !git fetch origin && git remote prune origin
+[status]
+	showUntrackedFiles = all
+[push]
+	default = current
+[fetch]
+	prune = true
 [pull]
 	rebase = true
-[commit]
-	template = /Users/kenta-kuroda/.stCommitMsg
-	gpgsign = true
-[rerere]
-	enabled = true
-[gpg]
-	program = /usr/local/bin/gpg
 [rebase]
 	updateRefs = true
+[rerere]
+	enabled = true
 [absorb]
 	maxStack=50
