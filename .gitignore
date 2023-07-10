@@ -16,6 +16,9 @@ common/.config/google-chrome
 !common/git/.gitconfig
 !common/git/.gitignore_global
 
+# brew
+!mac/brew/Brewfile
+
 # jetbrains
 !common/jetbrains/*/settings.jar
 
