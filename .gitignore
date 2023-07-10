@@ -10,8 +10,6 @@ common/.config/google-chrome
 !installer.sh
 !setup.sh
 
-!common/programming.sh
-
 # git
 !common/git/.gitconfig
 !common/git/.gitignore_global
