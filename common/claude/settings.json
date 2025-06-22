@@ -40,6 +40,7 @@
       "Bash(date:*)",
       "Bash(tree:*)",
       "Bash(jq:*)",
+      "Bash(say:*)",
       "Read(~/workspace/github.com/route06/**)",
       "Edit(~/workspace/github.com/route06/**)",
       "Edit(/tmp/**)",
