@@ -16,3 +16,5 @@ if [ -d $ZSHHOME -a -r $ZSHHOME -a \
         fi
     done
 fi
+# aqua
+export AQUA_REMOVE_MODE=pl
