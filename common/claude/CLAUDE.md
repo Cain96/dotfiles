@@ -317,6 +317,31 @@ say -v Kyoko "機能の実装が完了しました: ユーザー認証システ�
 - **Error Awareness**: Instantly know when something goes wrong
 - **Accessibility**: Audio feedback enhances the development experience
 
+## 🖼️ GitHub Asset Management
+
+### Image Analysis for Implementation Planning
+**When GitHub issues, PRs, or project READMEs contain image links, use gh-asset to download and analyze them**
+
+#### Implementation Guidelines
+- **YOU MUST: Download all images referenced in GitHub issues/PRs before creating implementation plans**
+- **YOU MUST: Analyze image content (mockups, diagrams, screenshots) to inform technical decisions**
+- **YOU MUST: Include visual requirements from images in your implementation strategy**
+- **YOU MUST: Reference specific visual elements when discussing implementation details**
+
+#### Usage
+```bash
+# Download images from GitHub
+gh-asset download <asset_id> .claude/local/assets
+```
+
+### Benefits
+- **Complete Context**: Ensure all visual requirements are captured in implementation
+- **Accurate Planning**: Base technical decisions on actual mockups/designs
+- **Better Communication**: Reference specific visual elements in discussions
+- **Reduced Misunderstandings**: Avoid implementation gaps from missing visual context
+
+Reference: https://github.com/YuitoSato/gh-asset
+
 ## 🔧 Commit Standards
 
 ### Conventional Commits

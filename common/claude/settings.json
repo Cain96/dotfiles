@@ -19,6 +19,7 @@
       "Bash(turbo:*)",
       "Bash(git:*)",
       "Bash(gh:*)",
+      "Bash(gh-asset:*)",
       "Bash(hub:*)",
       "Bash(ls:*)",
       "Bash(cd:*)",
