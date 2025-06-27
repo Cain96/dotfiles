@@ -40,6 +40,7 @@
 !common/claude/mcp.json
 !common/claude/settings.json
 !common/claude/CLAUDE.md
+!common/claude/commands/*.md
 
 !Makefile
 !README.md
