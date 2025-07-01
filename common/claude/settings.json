@@ -10,7 +10,6 @@
   },
   "includeCoAuthoredBy": false,
   "permissions": {
-    "defaultMode": "acceptEdits",
     "allow": [
       "Bash(pnpm:*)",
       "Bash(node:*)",
@@ -137,9 +136,45 @@
       "Write(/etc/passwd)",
       "Write(/etc/shadow)",
       "Write(/etc/sudoers)"
-    ]
+    ],
+    "defaultMode": "acceptEdits"
   },
   "model": "opus",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Sosumi.aiff"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"承認してください！\" with title \"Claude Code\" sound name \"Crystal\"'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"処理が完了しました！\" with title \"Claude Code\" sound name \"Crystal\"'"
+          }
+        ]
+      }
+    ]
+  },
   "theme": "dark",
   "preferredNotifChannel": "terminal_bell"
 }

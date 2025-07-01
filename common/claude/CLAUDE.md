@@ -269,54 +269,6 @@ git worktree prune
 Total time saved: ~11 hours
 ```
 
-
-## 🔊 Voice Notifications for Task Management
-
-### Task Completion Announcements
-**Use macOS `say` command to provide audio feedback for task status**
-
-#### Implementation Guidelines
-- **Language**: All voice notifications must be in Japanese
-- **Timing**: Announce immediately upon task completion or execution confirmation
-- **Content**: Include specific task details and results
-- **Voice**: Use system default Japanese voice (Kyoko)
-
-#### Notification Patterns
-```bash
-# Task completion
-say -v Kyoko "タスクが完了しました: [タスク名]"
-
-# Successful execution
-say -v Kyoko "コマンドが正常に実行されました: [コマンド名]"
-
-# Test completion
-say -v Kyoko "テストが完了しました。成功: [成功数]、失敗: [失敗数]"
-
-# Build completion
-say -v Kyoko "ビルドが完了しました: [ステータス]"
-
-# Error notification
-say -v Kyoko "エラーが発生しました: [エラー内容]"
-```
-
-#### Usage Examples
-```bash
-# After running tests
-pnpm test && say -v Kyoko "すべてのテストが正常に完了しました"
-
-# After building
-pnpm build && say -v Kyoko "ビルドが成功しました" || say -v Kyoko "ビルドに失敗しました"
-
-# After task completion
-say -v Kyoko "機能の実装が完了しました: ユーザー認証システム"
-```
-
-### Benefits
-- **Immediate Feedback**: Know when long-running tasks complete without watching the terminal
-- **Multi-tasking Support**: Work on other things while being notified of task completion
-- **Error Awareness**: Instantly know when something goes wrong
-- **Accessibility**: Audio feedback enhances the development experience
-
 ## 🖼️ GitHub Asset Management
 
 ### Image Analysis for Implementation Planning
