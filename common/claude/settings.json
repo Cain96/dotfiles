@@ -142,6 +142,17 @@
   },
   "model": "opus",
   "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if jq -r '.tool_input.command' | grep -q 'git commit.*--no-verify'; then confirm-pam \"Allow git commit --no-verify?\" || (echo \"Authenticated Failed - Disallow the commit by human. Please wait and follow the instructions.\" >&2; exit 2); fi"
+          }
+        ]
+      }
+    ],
     "PostToolUse": [
       {
         "matcher": "Write|Edit|MultiEdit",
