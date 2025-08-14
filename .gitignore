@@ -42,5 +42,8 @@
 !common/claude/CLAUDE.md
 !common/claude/commands/*.md
 
+# serena
+!common/serena/serena_config.yml
+
 !Makefile
 !README.md
