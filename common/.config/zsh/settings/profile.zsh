@@ -20,8 +20,11 @@ setopt hist_reduce_blanks      # historyに保存するときに余分なスペ�
 setopt hist_save_no_dups       # 重複するコマンドが保存されるとき、古い方を削除する
 setopt inc_append_history      # 実行時に履歴をファイルに追加していく
 
+# brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # direnv
 eval "$(direnv hook zsh)"
 
-# asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+# mise
+eval "$(mise activate zsh)"
