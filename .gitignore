@@ -14,9 +14,6 @@
 # brew
 !mac/brew/Brewfile
 
-# jetbrains
-!common/jetbrains/*/settings.jar
-
 # vim / neovim
 !common/.config/nvim/**
 
