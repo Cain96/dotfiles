@@ -1,0 +1,38 @@
+name: Check
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - ".github/workflows/**"
+      - ".aqua/**"
+  pull_request:
+    branches:
+      - master
+    paths:
+      - ".github/workflows/**"
+      - ".aqua/**"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Check
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+      - name: Install aqua
+        uses: aquaproj/aqua-installer@11dd79b4e498d471a9385aa9fb7f62bb5f52a73c # v4.0.4
+        env:
+          AQUA_CONFIG: ".aqua/aqua.yaml"
+        with:
+          aqua_version: "v2.55.1"
+      - name: Run pinact
+        run: pinact run --check
+      - name: Run actionlint
+        run: actionlint
