@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Brewfileのインストール
+# macOS環境でのみ実行
+{{ if eq .chezmoi.os "darwin" }}
+
+# brewコマンドの存在確認
+if ! command -v brew &> /dev/null; then
+    echo "Error: brew command not found. Please install Homebrew first." >&2
+    exit 1
+fi
+
+# Brewfileのパス（chezmoi適用後は~/.Brewfileになる）
+readonly BREWFILE="${HOME}/.Brewfile"
+
+# Brewfileの存在確認
+if [[ ! -f "${BREWFILE}" ]]; then
+    echo "Error: Brewfile not found: ${BREWFILE}" >&2
+    exit 1
+fi
+
+# Brewfileの内容をインストール
+echo "Installing packages from Brewfile..."
+brew bundle --file="${BREWFILE}"
+
+{{ end }}
