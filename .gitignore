@@ -21,4 +21,7 @@
 # aqua
 !.aqua/**
 
+# renovate
+!renovate.json5
+
 !README.md

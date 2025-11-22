@@ -1,0 +1,46 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: [
+    "config:recommended",
+    // 時間ごとのレートリミットはなし: https://docs.renovatebot.com/presets-default/#prhourlylimitnone
+    ":prHourlyLimitNone",
+    ":timezone(Asia/Tokyo)",
+    // GitHub Actionsのダイジェストを固定する
+    "helpers:pinGitHubActionDigests",
+    // aquaの設定を追加する
+    "github>aquaproj/aqua-renovate-config#2.9.0",
+  ],
+  // 毎週月曜午前6〜9時に動作
+  schedule: ["* 6-9 * * 1"],
+  labels: ["dependencies"],
+  /**
+   * auto mergeを早めるためにGitHubのauto mergeを有効化する
+   * @see https://docs.renovatebot.com/key-concepts/automerge/#faster-merges-with-platform-native-automerge
+   */
+  platformAutomerge: true,
+  /**
+   * version公開後、数日経ってからreadyにする
+   *　@see https://docs.renovatebot.com/configuration-options/#stabilitydays
+   */
+  major: {
+    minimumReleaseAge: "14 days",
+  },
+  minor: {
+    minimumReleaseAge: "7 days",
+    automerge: true,
+  },
+  patch: {
+    minimumReleaseAge: "7 days",
+    automerge: true,
+  },
+  prConcurrentLimit: 10,
+  configMigration: true,
+  vulnerabilityAlerts: {
+    // 毎日午前9時に動作
+    schedule: ["before 9am"],
+    labels: ["vulnerability"],
+    lockFileMaintenance: {
+      enabled: true,
+    },
+  },
+}
