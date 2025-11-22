@@ -20,6 +20,8 @@ brew "jsonnet"
 brew "folderify"
 # https://www.yasuhisay.info/entry/2025/07/12/131421
 brew "patchutils"
+# https://zenn.dev/shunsuke_suzuki/articles/pinact-pin-github-actions-version
+brew "pinact"
 
 # browser
 cask "thebrowsercompany-dia"
