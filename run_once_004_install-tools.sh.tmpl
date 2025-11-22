@@ -5,7 +5,7 @@ set -euo pipefail
 # macOS環境でのみ実行
 {{ if eq .chezmoi.os "darwin" }}
 
-eval "$(mise activate bash)"
+mise reshim
 
 # cargoコマンドの存在確認
 if ! command -v cargo &> /dev/null; then
