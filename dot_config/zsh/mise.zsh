@@ -24,7 +24,7 @@ _mise_select_plugin() {
 # Get installed versions for a tool
 _mise_get_installed_versions() {
   local name="$1"
-  mise list "$name" 2>/dev/null | awk '{print $2}' | sort --version-sort
+  mise list "$name" 2>/dev/null | awk '{print $2}' | sort --version-sort -r
 }
 
 # Get current version for a tool
@@ -40,7 +40,7 @@ _mise_select_version_for_install() {
   local installed=$(_mise_get_installed_versions "$name")
 
   if [ -n "$query" ]; then
-    mise ls-remote "$name" 2>/dev/null | sort --version-sort | while read v; do
+    mise ls-remote "$name" 2>/dev/null | sort --version-sort -r | while read v; do
       if printf '%s\n' "$installed" | grep -qFx "$v"; then
         echo "[installed] $v"
       else
@@ -48,7 +48,7 @@ _mise_select_version_for_install() {
       fi
     done | fzf --query "$query" | sed 's/^\[installed\] //'
   else
-    mise ls-remote "$name" 2>/dev/null | sort --version-sort | while read v; do
+    mise ls-remote "$name" 2>/dev/null | sort --version-sort -r | while read v; do
       if printf '%s\n' "$installed" | grep -qFx "$v"; then
         echo "[installed] $v"
       else
