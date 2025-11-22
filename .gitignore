@@ -8,8 +8,8 @@
 !setup.sh
 
 # git
-!common/git/.gitconfig
-!common/git/.gitignore_global
+!common/git/config
+!common/git/ignore
 
 # brew
 !mac/brew/Brewfile
@@ -19,18 +19,6 @@
 
 # vim / neovim
 !common/.config/nvim/**
-
-# xonsh
-!common/.config/xonsh/commands/__init__.py
-!common/.config/xonsh/commands/*.xsh
-!common/.config/xonsh/lib/__init__.py
-!common/.config/xonsh/lib/*.xsh
-!common/.config/xonsh/rc.xsh
-
-# fish
-!common/.config/fish/completions/*.fish
-!common/.config/fish/functions/*.fish
-!common/.config/fishfile
 
 # zsh
 !common/.config/zsh/.zshrc
