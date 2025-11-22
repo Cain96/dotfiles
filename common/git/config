@@ -1,10 +1,18 @@
 [user]
 	name = Kenta Kuroda
 	email = tk.777.k@gmail.com
+	signingkey = ~/.ssh/id_ed25519_signed
 [core]
-	excludesfile = ~/.gitignore_global
 	ignorecase = false
 	quotepath = false
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
 [ghq]
 	root = ~/workspace
 [alias]
