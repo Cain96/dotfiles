@@ -24,3 +24,4 @@ jobs:
         run: brew install chezmoi
       - name: Initialize chezmoi
         run: chezmoi init --apply -S .
+        shell: zsh {0}
