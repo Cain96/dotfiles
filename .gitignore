@@ -4,31 +4,15 @@
 *
 !*/
 
-# allow any
-!setup.sh
+# chezmoi
+!.chezmoi.yaml
+!.chezmoiignore
+!dot_*
+!dot_*/**
+!run_once_**
+!run_onchange_**
 
-# git
-!common/git/config
-!common/git/ignore
+# vscode
+.vscode/settings.json
 
-# brew
-!mac/brew/Brewfile
-
-# vim / neovim
-!common/.config/nvim/**
-
-# zsh
-!common/.config/zsh/.zshrc
-!common/.config/zsh/settings/*
-
-# claude
-!common/claude/mcp.json
-!common/claude/settings.json
-!common/claude/CLAUDE.md
-!common/claude/commands/*.md
-
-# serena
-!common/serena/serena_config.yml
-
-!Makefile
 !README.md
