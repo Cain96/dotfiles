@@ -1,0 +1,5 @@
+.gitignore
+.chezmoiignore
+.chezmoi.yaml
+README.md
+.vscode
