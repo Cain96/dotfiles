@@ -5,8 +5,6 @@ set -euo pipefail
 # macOS環境でのみ実行
 {{ if eq .chezmoi.os "darwin" }}
 
-mise reshim
-
 # cargoコマンドの存在確認
 if ! command -v cargo &> /dev/null; then
     echo "Error: cargo command not found. Please install rust with mise first." >&2
@@ -22,16 +20,5 @@ cargo install confirm-pam
 # https://zenn.dev/mizchi/articles/introduce-ts-similarity
 echo "Installing similarity-ts..."
 cargo install similarity-ts
-
-# goコマンドの存在確認
-if ! command -v go &> /dev/null; then
-    echo "Error: go command not found. Please install go with mise first." >&2
-    exit 1
-fi
-
-# git-sequential-stageのインストール
-# https://www.yasuhisay.info/entry/2025/07/12/131421
-echo "Installing git-sequential-stage..."
-go install github.com/syou6162/git-sequential-stage@latest
 
 {{ end }}
