@@ -1,37 +1,45 @@
 tap "homebrew/bundle"
 
-brew "asdf"
-brew "awscli"
-brew "direnv"
-brew "envchain"
-brew "folderify"
-brew "ghq"
+# package manager
+brew "mise"
+brew "aqua"
+
+# development
 brew "git"
 brew "git-absorb"
-brew "gnupg"
 brew "hub"
-brew "jq"
+brew "ghq"
 brew "neovim"
 brew "peco"
-brew "pinentry-mac"
 brew "pngquant"
+brew "jq"
 brew "tree"
+brew "jsonnet"
+brew "folderify"
 
-cask "adobe-creative-cloud"
-cask "arc"
-cask "clipy"
+# browser
+cask "dia"
+cask "google-chrome"
+
+# productivity
+cask "raycast"
+cask "google-japanese-ime"
+cask "slack"
 cask "discord"
-cask "docker"
+cask "zoom"
 cask "figma"
 cask "google-drive"
-cask "google-japanese-ime"
-cask "graphql-playground"
-cask "neat"
-cask "ngrok"
+cask "chatgpt"
+cask "claude"
+
+# container
+cask "docker"
 cask "orbstack"
-cask "raycast"
+
+# development applications
+cask "visual-studio-code"
+cask "cursor"
+cask "zed"
+cask "warp"
 cask "sourcetree"
 cask "tableplus"
-cask "visual-studio-code"
-cask "warp"
-cask "zed"
