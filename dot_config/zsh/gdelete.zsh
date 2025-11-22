@@ -1,8 +1,8 @@
 function gdelete() {
-  local deleteBranches=($(git branch --merged | grep -vE '^\*|develop$|master$|main$'))
-  local deleteRemoteBranches=($(git branch -r --merged | grep -vE '^\*|develop$|master$|main$'))
+  local deleteBranches=($(git branch --merged | grep -v '^\*|develop$|master$|main$'))
+  local deleteRemoteBranches=($(git branch -r --merged | grep -v '^\*|develop$|master$|main$'))
 
-  if if [[ ${#deleteBranches[@]} -eq 0 && ${#deleteRemoteBranches[@]} -eq 0 ]]; then
+  if [[ ${#deleteBranches[@]} -eq 0 && ${#deleteRemoteBranches[@]} -eq 0 ]]; then
     echo "No branches to delete"
     return 0
   fi
