@@ -1,0 +1,22 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    name: Setup Test
+    runs-on: macos-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+      - name: Install chezmoi
+        run: brew install chezmoi
+      - name: Initialize chezmoi
+        run: chezmoi init --apply -S .

@@ -13,6 +13,9 @@
 !run_onchange_**
 
 # vscode
-.vscode/settings.json
+!.vscode/settings.json
+
+# github
+!.github/**
 
 !README.md
