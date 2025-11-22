@@ -1,0 +1,11 @@
+.metadata/
+.idea/
+*.iml
+.DStore
+.DS_Store
+*.swp
+/vendor/bundler/
+/vendor/bundle/
+.envrc
+.claude
+.Cain96

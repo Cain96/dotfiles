@@ -1,0 +1,57 @@
+tap "homebrew/bundle"
+
+# package manager
+brew "mise"
+brew "aqua"
+
+# development
+brew "chezmoi"
+brew "git"
+brew "git-absorb"
+brew "hub"
+brew "ghq"
+brew "neovim"
+brew "fzf"
+brew "pngquant"
+brew "jq"
+brew "tree"
+brew "ripgrep"
+brew "jsonnet"
+brew "folderify"
+# https://www.yasuhisay.info/entry/2025/07/12/131421
+brew "patchutils"
+
+# browser
+cask "thebrowsercompany-dia"
+cask "google-chrome"
+
+# productivity
+cask "raycast"
+cask "google-japanese-ime"
+cask "slack"
+cask "discord"
+cask "zoom"
+cask "figma"
+cask "google-drive"
+cask "keycastr"
+cask "obsidian"
+cask "monitorcontrol"
+
+# ai
+cask "chatgpt"
+cask "codex"
+cask "claude"
+cask "claude-code"
+brew "gemini-cli"
+
+# container
+# cask "docker"
+cask "orbstack"
+
+# development applications
+cask "visual-studio-code"
+cask "cursor"
+cask "zed"
+cask "warp"
+cask "sourcetree"
+cask "tableplus"

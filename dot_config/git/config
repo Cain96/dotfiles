@@ -1,0 +1,35 @@
+[user]
+	name = Kenta Kuroda
+	email = tk.777.k@gmail.com
+	signingkey = ~/.ssh/id_ed25519_signed
+[core]
+	ignorecase = false
+	quotepath = false
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[ghq]
+	root = ~/workspace
+[alias]
+	co = checkout
+	cm = commit
+	refresh= !git fetch origin && git remote prune origin
+[status]
+	showUntrackedFiles = all
+[push]
+	default = current
+[fetch]
+	prune = true
+[pull]
+	rebase = true
+[rebase]
+	updateRefs = true
+[rerere]
+	enabled = true
+[absorb]
+	maxStack=50
