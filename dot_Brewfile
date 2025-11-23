@@ -55,3 +55,7 @@ cask "zed"
 cask "warp"
 cask "sourcetree"
 cask "tableplus"
+
+# fonts
+cask "font-0xproto"
+cask "font-hackgen"
