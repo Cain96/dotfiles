@@ -4,23 +4,38 @@ on:
   push:
     branches:
       - master
-    paths:
-      - ".github/workflows/**"
-      - ".aqua/**"
   pull_request:
     branches:
       - master
-    paths:
-      - ".github/workflows/**"
-      - ".aqua/**"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
+  changes:
+    name: Detect changes
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 5
+    outputs:
+      should_run: ${{ steps.filter.outputs.workflows == 'true' || steps.filter.outputs.aqua == 'true' }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+      - name: Check for relevant changes
+        uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
+        id: filter
+        with:
+          filters: |
+            workflows:
+              - '.github/workflows/**'
+            aqua:
+              - '.aqua/**'
+
   check:
     name: Check
+    needs: changes
+    if: needs.changes.outputs.should_run == 'true'
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 10
     steps:
