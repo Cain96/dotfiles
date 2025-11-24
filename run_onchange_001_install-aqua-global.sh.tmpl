@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# aquaのグローバル設定のインストール
+# macOS環境でのみ実行
+{{ if eq .chezmoi.os "darwin" }}
+
+# aquaコマンドの存在確認
+if ! command -v aqua &> /dev/null; then
+    echo "Error: aqua command not found. Please install aqua first." >&2
+    exit 1
+fi
+
+# aqua.yamlのパス（chezmoi適用後は~/.config/aquaproj-aqua/aqua.yamlになる）
+readonly AQUA_CONFIG="${HOME}/.config/aquaproj-aqua/aqua.yaml"
+
+# aqua.yamlの存在確認
+if [[ ! -f "${AQUA_CONFIG}" ]]; then
+    echo "Error: aqua.yaml not found: ${AQUA_CONFIG}" >&2
+    exit 1
+fi
+
+# aquaのグローバル設定をインストール
+echo "Installing aqua global packages..."
+aqua i -a
+
+{{ end }}
