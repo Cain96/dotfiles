@@ -5,10 +5,10 @@ set -euo pipefail
 # macOS環境でのみ実行
 {{ if eq .chezmoi.os "darwin" }}
 
-# aquaコマンドの存在確認
+# aquaコマンドの存在確認（なければインストール）
 if ! command -v aqua &> /dev/null; then
-    echo "Error: aqua command not found. Please install aqua first." >&2
-    exit 1
+    echo "Installing aqua..."
+    brew install aqua
 fi
 
 # aqua.yamlのパス（chezmoi適用後は~/.config/aquaproj-aqua/aqua.yamlになる）
