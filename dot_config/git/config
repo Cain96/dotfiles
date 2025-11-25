@@ -19,6 +19,8 @@
 	co = checkout
 	cm = commit
 	refresh= !git fetch origin && git remote prune origin
+	aicommit = !git-aicommit
+	aibranch = !git-aibranch
 [status]
 	showUntrackedFiles = all
 [push]

@@ -1,0 +1,124 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# オプション解析
+lang_option=""
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    --lang)
+      lang_option="$2"
+      if [[ "${lang_option}" != "ja" && "${lang_option}" != "en" ]]; then
+        echo "Error: --lang must be either 'ja' or 'en'" >&2
+        exit 1
+      fi
+      shift 2
+      ;;
+    -h|--help)
+      echo "Usage: git aicommit [--lang <ja|en>]"
+      echo ""
+      echo "Options:"
+      echo "  --lang <ja|en>  Specify commit message language (default: auto-detect)"
+      echo "  -h, --help      Show this help message"
+      exit 0
+      ;;
+    *)
+      echo "Error: Unknown option: $1" >&2
+      echo "Use --help for usage information" >&2
+      exit 1
+      ;;
+  esac
+done
+
+# 最近のコミットメッセージを取得（言語検出用）
+recent_commits=$(git log --format=%s -20 2>/dev/null | head -20)
+
+# ステージングされた変更を取得
+diff_content=$(git diff --cached)
+
+# ステージングされた変更がない場合はエラー
+if [[ -z "${diff_content}" ]]; then
+  echo "Error: No staged changes found. Use 'git add' first." >&2
+  exit 1
+fi
+
+# 言語指定に基づくシステムプロンプトの構築
+if [[ -n "${lang_option}" ]]; then
+  # 言語が明示的に指定された場合
+  if [[ "${lang_option}" == "ja" ]]; then
+    lang_instruction="- Generate the commit message in JAPANESE"
+    lang_examples="EXAMPLES:
+feat(auth): JWTトークンリフレッシュ機能を追加
+fix(api): nullレスポンスを適切に処理
+docs(readme): インストール手順を更新"
+  else
+    lang_instruction="- Generate the commit message in ENGLISH"
+    lang_examples="EXAMPLES:
+feat(auth): add JWT token refresh functionality
+fix(api): handle null responses properly
+docs(readme): update installation instructions"
+  fi
+else
+  # 言語が指定されていない場合は自動判別
+  lang_instruction="- Analyze recent commits to detect the repository's primary language (Japanese or English)
+- Generate the commit message in the SAME language as the repository"
+  lang_examples="EXAMPLES (Japanese):
+feat(auth): JWTトークンリフレッシュ機能を追加
+fix(api): nullレスポンスを適切に処理
+docs(readme): インストール手順を更新
+
+EXAMPLES (English):
+feat(auth): add JWT token refresh functionality
+fix(api): handle null responses properly
+docs(readme): update installation instructions"
+fi
+
+# システムプロンプトの定義
+system_prompt="You are an expert software engineer. Generate a single-line commit message in Conventional Commits format: <type>(<scope>): <subject>
+
+CRITICAL RULES:
+- type: Choose from feat, fix, docs, style, refactor, perf, test, chore
+- scope: Infer from changed file paths (e.g., auth, api, core, brew, aqua). Choose appropriate scope for project-wide changes
+- subject: Concise description in imperative mood
+- Output ONLY the commit message line itself
+- DO NOT include any explanations, analysis, reasoning, or preamble
+- DO NOT use code blocks or markdown formatting
+- DO NOT write multiple lines
+- JUST output the single commit message line and nothing else
+
+LANGUAGE:
+${lang_instruction}
+
+${lang_examples}"
+
+# ユーザープロンプトの定義
+if [[ -n "${lang_option}" ]]; then
+  # 言語指定がある場合は最近のコミットは不要
+  user_prompt="Generate an appropriate commit message for the staged changes. Analyze the changes and determine the most suitable type, scope, and subject.
+
+Staged changes:
+${diff_content}"
+else
+  # 自動判別の場合は最近のコミットを含める
+  user_prompt="Recent commits for language detection:
+${recent_commits}
+
+Generate an appropriate commit message for the staged changes. Analyze the changes and determine the most suitable type, scope, and subject. Use the same language as the recent commits.
+
+Staged changes:
+${diff_content}"
+fi
+
+# Claude Code でコミットメッセージを生成
+raw_output=$(claude -p --system-prompt "${system_prompt}" "${user_prompt}")
+commit_msg=$(echo "${raw_output}" | grep -E '^[a-z]+(\([a-z0-9-]+\))?: ' | head -1 | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+
+# コミットメッセージの検証
+if [[ -z "${commit_msg}" ]]; then
+  echo "Error: Failed to generate commit message." >&2
+  echo "Debug: Attempting to show raw Claude output..." >&2
+  claude -p --system-prompt "${system_prompt}" "${user_prompt}" 2>&1 | head -5 >&2
+  exit 1
+fi
+
+# コミット実行（エディタで編集可能）
+git commit -e -m "${commit_msg}"

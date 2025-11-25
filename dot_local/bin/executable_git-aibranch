@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# 変更の確認
+if [[ -z "$(git diff HEAD --name-only 2>/dev/null)" ]]; then
+  echo "Error: No changes found. Make some changes first." >&2
+  exit 1
+fi
+
+# 変更内容を取得
+diff_content=$(git diff HEAD)
+
+# システムプロンプトの定義
+system_prompt='You are an expert software engineer specializing in Git workflow optimization. Generate a branch name based on changes.
+
+BRANCH NAME FORMAT:
+<type>/<description>
+
+TYPE SELECTION RULES:
+- feature: New functionality, new features, or enhancements
+- bugfix: Bug fixes, error corrections, or issue resolutions
+- hotfix: Critical production fixes that need immediate deployment
+- refactor: Code restructuring without changing external behavior
+- experiment: Experimental changes, POCs, or research spikes
+
+DESCRIPTION RULES:
+- Use kebab-case (lowercase with hyphens)
+- Maximum 50 characters
+- Concise and descriptive
+- Use imperative mood (add-user-auth, not adding-user-auth)
+- Focus on WHAT, not HOW
+- Avoid generic terms like "update", "modify", "change"
+- Be specific: "add-jwt-refresh" not "update-auth"
+
+TYPE SELECTION GUIDELINES:
+1. New files or major additions → feature
+2. Fixes to existing functionality → bugfix
+3. Production-critical fixes → hotfix
+4. Structural changes without new features → refactor
+5. Temporary or exploratory changes → experiment
+
+OUTPUT REQUIREMENTS:
+- Output ONLY the branch name (no explanations, no quotes, no prefixes)
+- Single line only
+- Must be a valid Git branch name (no spaces, special characters except hyphens)
+- Format: exactly "<type>/<description>"
+
+EXAMPLES:
+- feature/add-user-authentication
+- bugfix/fix-null-pointer-exception
+- hotfix/patch-security-vulnerability
+- refactor/extract-validation-logic
+- experiment/test-react-19-upgrade'
+
+# ユーザープロンプト
+user_prompt="Analyze the changes and generate an appropriate branch name. Choose the most suitable type based on the nature of the changes.
+
+Changes to analyze:
+${diff_content}"
+
+# ブランチ名を生成
+branch_name=$(claude -p --system-prompt "${system_prompt}" "${user_prompt}" | grep -oE '(feature|bugfix|hotfix|refactor|experiment)/[a-z0-9-]+' | head -1)
+
+# ブランチ名の検証
+if [[ -z "${branch_name}" ]]; then
+  echo "Error: Failed to generate branch name." >&2
+  echo "Debug: Attempting to show raw Claude output..." >&2
+  claude -p --system-prompt "${system_prompt}" "${user_prompt}" 2>&1 | head -5 >&2
+  exit 1
+fi
+
+# フォーマット検証
+if ! echo "${branch_name}" | grep -qE '^(feature|bugfix|hotfix|refactor|experiment)/[a-z0-9-]+$'; then
+  echo "Error: Generated branch name '${branch_name}' does not match expected format." >&2
+  echo "Expected format: <type>/<description>" >&2
+  exit 1
+fi
+
+# ブランチの存在確認
+if git show-ref --verify --quiet "refs/heads/${branch_name}"; then
+  echo "Error: Branch '${branch_name}' already exists." >&2
+  echo "Use 'git switch ${branch_name}' to switch to it." >&2
+  exit 1
+fi
+
+# ブランチを作成して切り替え
+echo "Created and switched to branch: ${branch_name}"
+git switch -c "${branch_name}"
