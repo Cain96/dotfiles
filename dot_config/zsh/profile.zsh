@@ -20,11 +20,24 @@ setopt hist_reduce_blanks      # historyに保存するときに余分なスペ�
 setopt hist_save_no_dups       # 重複するコマンドが保存されるとき、古い方を削除する
 setopt inc_append_history      # 実行時に履歴をファイルに追加していく
 
+# 補完の設定
+autoload -Uz compinit && compinit
+
 # brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# mise
+eval "$(mise activate zsh)"
+
+# aqua
+export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua/bin:$PATH"
+export AQUA_REMOVE_MODE=pl
+export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:/Users/kenta-kuroda/.config/aquaproj-aqua/aqua.yaml
+
+source <(aqua completion zsh)
 
 # direnv
 eval "$(direnv hook zsh)"
 
-# mise
-eval "$(mise activate zsh)"
+# chezmoi
+source <(chezmoi completion zsh)
