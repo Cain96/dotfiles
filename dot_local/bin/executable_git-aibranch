@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# untracked filesを追加
+git add -N $(git rev-parse --show-toplevel)
+
 # 変更の確認
 if [[ -z "$(git diff HEAD --name-only 2>/dev/null)" ]]; then
   echo "Error: No changes found. Make some changes first." >&2
@@ -9,6 +12,9 @@ fi
 
 # 変更内容を取得
 diff_content=$(git diff HEAD)
+
+# untracked filesを戻す
+git reset
 
 # システムプロンプトの定義
 system_prompt='You are an expert software engineer specializing in Git workflow optimization. Generate a branch name based on changes.
