@@ -2,6 +2,7 @@
 readonly -a MISE_CORE_PLUGINS=(
   node
   deno
+  bun
   python
   ruby
 )
