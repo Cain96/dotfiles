@@ -33,6 +33,7 @@ cask "google-drive"
 cask "keycastr"
 cask "obsidian"
 cask "monitorcontrol"
+cask "shottr"
 
 # ai
 cask "chatgpt"
