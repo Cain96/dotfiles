@@ -33,3 +33,4 @@ alias gl='git log --graph'
 # original
 alias g='search-ghq-projects'
 alias search='search-ghq-projects'
+alias rebrew='brew update && brew upgrade && brew cleanup'
