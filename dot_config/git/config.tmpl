@@ -9,7 +9,7 @@
 	signingkey = ~/.ssh/id_ed25519_signed
 {{ else }}
 	# 仕事用PC用設定（1Password）
-	signingkey = {{ exec "op" "read" "op://Employee/id_ed25519_signed/public key" | trim }}
+	signingkey = {{ onepasswordRead "op://Employee/id_ed25519_signed/public key" }}
 {{ end }}
 [core]
 	ignorecase = false
