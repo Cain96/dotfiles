@@ -6,7 +6,8 @@ registries:
   - type: standard
     ref: v4.439.0 # renovate: depName=aquaproj/aqua-registry
 packages:
-- name: suzuki-shunsuke/pinact@v3.4.4
-- name: google/go-jsonnet@v0.21.0
-- name: aws/aws-cli@2.32.3
-- name: direnv/direnv@v2.37.1
+  - name: suzuki-shunsuke/pinact@v3.4.4
+  - name: google/go-jsonnet@v0.21.0
+  - name: aws/aws-cli@2.32.3
+  - name: direnv/direnv@v2.37.1
+  - name: 1password/cli@v2.32.0
