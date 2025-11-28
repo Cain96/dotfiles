@@ -10,4 +10,4 @@ packages:
   - name: google/go-jsonnet@v0.21.0
   - name: aws/aws-cli@2.32.3
   - name: direnv/direnv@v2.37.1
-  - name: 1password/cli@v2.31.1
+  - name: 1password/cli@v2.32.0
