@@ -18,6 +18,7 @@
 [alias]
 	co = checkout
 	cm = commit
+	pushf = push --force-with-lease --force-if-includes
 	refresh= !git fetch origin && git remote prune origin
 	aicommit = !~/.local/bin/git-aicommit
 	aibranch = !~/.local/bin/git-aibranch
