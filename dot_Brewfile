@@ -57,3 +57,5 @@ cask "tableplus"
 # fonts
 cask "font-0xproto"
 cask "font-hackgen"
+cask "font-monaspace"
+cask "font-moralerspace"
