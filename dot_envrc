@@ -1,0 +1,25 @@
+# aqua global configuration
+use_aqua_global() {
+  local aqua_config="${HOME}/.config/aquaproj-aqua/aqua.yaml"
+
+  # aquaコマンドの存在確認
+  if ! command -v aqua &> /dev/null; then
+    return
+  fi
+
+  # グローバル設定ファイルの存在確認
+  if [[ ! -f "${aqua_config}" ]]; then
+    return
+  fi
+
+  # PATHにaquaのbinディレクトリを追加
+  PATH_add "$(aqua root-dir)/bin"
+
+  # グローバル設定ファイルの変更を監視
+  watch_file "${aqua_config}"
+
+  # グローバル設定のツールをlazy install
+  aqua install -a -l
+}
+
+has aqua && use_aqua_global
