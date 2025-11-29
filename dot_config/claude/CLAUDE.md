@@ -108,7 +108,6 @@ pnpm run precommit  # TypeScript
 - **YOU MUST: Document breaking changes**
 - **YOU MUST: Use feature branches for all development**
 - **YOU MUST: Add comprehensive documentation to all public APIs**
-- **YOU MUST: Use macOS `say` command to announce task completion and execution confirmations in Japanese**
 
 ## 📘 Primary Technologies
 
