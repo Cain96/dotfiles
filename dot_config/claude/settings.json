@@ -64,7 +64,8 @@
       "NotebookEdit(~/workspace/**)",
       "TodoRead(**)",
       "TodoWrite(**)",
-      "Task(**)"
+      "Task(**)",
+      "Skill(**)"
     ],
     "deny": [
       "Bash(rm -rf /)",
