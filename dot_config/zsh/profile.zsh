@@ -32,7 +32,7 @@ eval "$(mise activate zsh)"
 # aqua
 export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua/bin:$PATH"
 export AQUA_REMOVE_MODE=pl
-export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:/Users/kenta-kuroda/.config/aquaproj-aqua/aqua.yaml
+export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:$HOME/.config/aquaproj-aqua/aqua.yaml
 
 source <(aqua completion zsh)
 
@@ -41,3 +41,6 @@ eval "$(direnv hook zsh)"
 
 # chezmoi
 source <(chezmoi completion zsh)
+
+# claude code
+export CLAUDE_CONFIG_DIR=$HOME/.config/claude

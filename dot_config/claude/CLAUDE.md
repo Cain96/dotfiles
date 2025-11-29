@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working across 
 
 ## 📋 Overview
 
-This is my global Claude Code configuration directory (`~/.claude`) that sets up:
+This is my global Claude Code configuration directory (`~/.config/claude`) that sets up:
 - Professional development standards and workflows
 - Language-specific best practices (TypeScript, Bash)
 - Permission rules for tool usage
