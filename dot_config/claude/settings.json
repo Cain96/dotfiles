@@ -141,7 +141,6 @@
     ],
     "defaultMode": "acceptEdits"
   },
-  "model": "opus",
   "hooks": {
     "PreToolUse": [
       {
