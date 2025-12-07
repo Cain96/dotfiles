@@ -100,6 +100,7 @@ The repository includes run-once scripts that are executed automatically during 
 2. **`run_once_002_install-brewfile.sh.tmpl`** - Installs packages from Brewfile (macOS only)
 3. **`run_once_003_install-languages.sh.tmpl`** - Installs programming languages and tools from `~/.config/mise/config.toml` using mise, and sets up safe-chain (macOS only)
 4. **`run_once_004_install-tools.sh.tmpl`** - Installs additional tools (confirm-pam, similarity-ts, git-sequential-stage) using cargo and go (macOS only)
+5. **`run_once_005_mac-settings.sh.tmpl`** - Configures macOS system settings (Finder extensions, path bar, status bar, screenshot naming) (macOS only)
 
 These scripts run only once per machine and are macOS-specific.
 
