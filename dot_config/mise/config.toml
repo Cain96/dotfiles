@@ -1,0 +1,15 @@
+[tools]
+bun = "latest"
+deno = "latest"
+node = "25"
+"npm:@antfu/ni" = "latest"
+"npm:pnpm" = "latest"
+"npm:@aikidosec/safe-chain" = "1.1.10"
+python = "latest"
+uv = "latest"
+go = "latest"
+rust = "latest"
+ruby = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["ruby", "node"]

@@ -11,12 +11,7 @@ if ! command -v mise &> /dev/null; then
     exit 1
 fi
 
-# miseでnode, deno, bun, go, rustの最新バージョンをインストール
-echo "Installing latest versions of node, deno, bun, go, and rust with mise..."
-mise install node@latest deno@latest bun@latest go@latest rust@latest
-
-# グローバル設定
-echo "Applying global settings with mise..."
-mise use -g node@latest deno@latest bun@latest go@latest rust@latest
-
+# miseでglobal toolsの最新バージョンをインストール
+echo "Installing latest versions of global tools with mise..."
+mise install rust
 {{ end }}
