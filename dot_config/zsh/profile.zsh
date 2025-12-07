@@ -44,3 +44,6 @@ source <(chezmoi completion zsh)
 
 # claude code
 export CLAUDE_CONFIG_DIR=$HOME/.config/claude
+
+# safe-chain
+source $HOME/.safe-chain/scripts/init-posix.sh
