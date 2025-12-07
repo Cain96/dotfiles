@@ -45,10 +45,10 @@
 使用方法：
 ```bash
 # 基本的な使い方
-git-sequential-stage -patch="path/to/changes.patch" -hunk="src/main.go:1,3,5"
+git-sequential-stage stage -patch="path/to/changes.patch" -hunk="src/main.go:1,3,5"
 
 # 複数ファイルの場合（複数の-hunkフラグを指定）
-git-sequential-stage -patch="path/to/changes.patch" \
+git-sequential-stage stage -patch="path/to/changes.patch" \
   -hunk="src/main.go:1,3" \
   -hunk="src/utils.go:2,4"
 
@@ -123,10 +123,10 @@ COMMIT_MSG="fix: ゼロ除算エラーを修正
 ```bash
 # git-sequential-stageを実行（内部で逐次ステージングを安全に処理）
 # 単一ファイルの場合
-git-sequential-stage -patch=".claude/tmp/current_changes.patch" -hunk="src/calculator.py:1,3,5"
+git-sequential-stage stage -patch=".claude/tmp/current_changes.patch" -hunk="src/calculator.py:1,3,5"
 
 # 複数ファイルの場合
-git-sequential-stage -patch=".claude/tmp/current_changes.patch" \
+git-sequential-stage stage -patch=".claude/tmp/current_changes.patch" \
   -hunk="src/calculator.py:1,3,5" \
   -hunk="src/utils.py:2"
 
@@ -185,10 +185,10 @@ which filterdiff           # patchutilsパッケージ（差分解析用）
 ↓ 分割結果
 
 コミット1: fix: ゼロ除算エラーを修正
-git-sequential-stage -patch=".claude/tmp/current_changes.patch" -hunk="src/calculator.py:1,3,5"
+git-sequential-stage stage -patch=".claude/tmp/current_changes.patch" -hunk="src/calculator.py:1,3,5"
 
 コミット2: refactor: 計算ロジックの最適化
-git-sequential-stage -patch=".claude/tmp/current_changes.patch" -hunk="src/calculator.py:2,4"
+git-sequential-stage stage -patch=".claude/tmp/current_changes.patch" -hunk="src/calculator.py:2,4"
 ```
 
 ### 複雑な変更パターン
@@ -202,15 +202,15 @@ git-sequential-stage -patch=".claude/tmp/current_changes.patch" -hunk="src/calcu
 ↓ 分割結果
 
 コミット1: fix: 既存認証のセキュリティ脆弱性修正
-git-sequential-stage -patch=".claude/tmp/current_changes.patch" -hunk="src/auth.py:1,3,5"
+git-sequential-stage stage -patch=".claude/tmp/current_changes.patch" -hunk="src/auth.py:1,3,5"
 
 コミット2: feat: JWT認証機能の実装
-git-sequential-stage -patch=".claude/tmp/current_changes.patch" \
+git-sequential-stage stage -patch=".claude/tmp/current_changes.patch" \
   -hunk="src/auth.py:2,4" \
   -hunk="src/models.py:1,2"
 
 コミット3: test: 認証機能のテスト追加
-git-sequential-stage -patch=".claude/tmp/current_changes.patch" -hunk="tests/test_auth.py:1,2,3"
+git-sequential-stage stage -patch=".claude/tmp/current_changes.patch" -hunk="tests/test_auth.py:1,2,3"
 ```
 
 ## ベストプラクティス
@@ -256,7 +256,7 @@ cat .git/info/exclude
 
 ```bash
 # エラーメッセージを確認
-git-sequential-stage -patch=".claude/tmp/current_changes.patch" -hunk="file.go:1,2,3" 2>&1
+git-sequential-stage stage -patch=".claude/tmp/current_changes.patch" -hunk="file.go:1,2,3" 2>&1
 
 # パッチファイルの内容を確認
 cat .claude/tmp/current_changes.patch | head -50
