@@ -18,6 +18,7 @@ brew "folderify"
 # https://www.yasuhisay.info/entry/2025/07/12/131421
 brew "patchutils"
 
+{{ if ne (env "CI") "true" }}
 # browser
 cask "thebrowsercompany-dia"
 cask "google-chrome"
@@ -59,3 +60,4 @@ cask "font-0xproto"
 cask "font-hackgen"
 cask "font-monaspace"
 cask "font-moralerspace"
+{{ end }}
