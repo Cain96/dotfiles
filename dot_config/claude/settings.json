@@ -9,7 +9,10 @@
     "EDITOR": "/opt/homebrew/bin/nvim",
     "NODE_OPTIONS": "--max-old-space-size=4096"
   },
-  "includeCoAuthoredBy": false,
+  "attribution": {
+    "commit": "🤖 Generated with Claude Code",
+    "pr": ""
+  },
   "permissions": {
     "allow": [
       "Bash(pnpm:*)",
