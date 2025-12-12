@@ -26,6 +26,16 @@ This is my global Claude Code configuration directory (`~/.config/claude`) that 
 ### Tool Usage Optimization
 **For maximum efficiency, whenever you need to perform multiple independent operations, invoke all relevant tools simultaneously rather than sequentially.**
 
+### GitHub URL Handling
+**When receiving GitHub URLs (starting with `https://github.com/`):**
+- **YOU MUST: Always try using the `gh` command first** before attempting other methods
+- **Examples:**
+  - Issue: `gh issue view <issue-number>`
+  - Pull Request: `gh pr view <pr-number>`
+  - Repository info: `gh repo view <owner>/<repo>`
+- **Benefits:** Direct API access, structured data, and better integration with GitHub features
+- **Fallback:** Only use WebFetch or other tools if `gh` command is not available or fails
+
 ### Efficient Professional Workflow
 **Smart Explore-Plan-Code-Commit with time-saving automation**
 
