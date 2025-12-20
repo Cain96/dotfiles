@@ -23,38 +23,39 @@ setopt inc_append_history      # 実行時に履歴をファイルに追加し�
 # 補完の設定
 autoload -Uz compinit && compinit
 
+# ツールチェック用ヘルパー関数
+check_and_init() {
+  local tool_name="$1"
+  local init_command="$2"
+
+  if command -v "$tool_name" &> /dev/null; then
+    eval "$init_command"
+  else
+    echo "⚠️  ${tool_name}: not found" >&2
+  fi
+}
+
 # brew
 if [ -x /opt/homebrew/bin/brew ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+  echo "⚠️  brew: not found" >&2
 fi
 
 # mise
-if command -v mise &> /dev/null; then
-  eval "$(mise activate zsh)"
-fi
+check_and_init "mise" 'eval "$(mise activate zsh)"'
 
 # aqua
-if command -v aqua &> /dev/null; then
-  export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua/bin:$PATH"
-  export AQUA_REMOVE_MODE=pl
-  export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:$HOME/.config/aquaproj-aqua/aqua.yaml
-  source <(aqua completion zsh)
-fi
+check_and_init "aqua" 'export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua/bin:$PATH"; export AQUA_REMOVE_MODE=pl; export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:$HOME/.config/aquaproj-aqua/aqua.yaml; source <(aqua completion zsh)'
 
 # direnv
-if command -v direnv &> /dev/null; then
-  eval "$(direnv hook zsh)"
-fi
+check_and_init "direnv" 'eval "$(direnv hook zsh)"'
 
 # chezmoi
-if command -v chezmoi &> /dev/null; then
-  source <(chezmoi completion zsh)
-fi
+check_and_init "chezmoi" 'source <(chezmoi completion zsh)'
 
 # zoxide
-if command -v zoxide &> /dev/null; then
-  eval "$(zoxide init zsh)"
-fi
+check_and_init "zoxide" 'eval "$(zoxide init zsh)"'
 
 # claude code
 export CLAUDE_CONFIG_DIR=$HOME/.config/claude
