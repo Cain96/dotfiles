@@ -24,23 +24,37 @@ setopt inc_append_history      # 実行時に履歴をファイルに追加し�
 autoload -Uz compinit && compinit
 
 # brew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [ -x /opt/homebrew/bin/brew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 # mise
-eval "$(mise activate zsh)"
+if command -v mise &> /dev/null; then
+  eval "$(mise activate zsh)"
+fi
 
 # aqua
-export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua/bin:$PATH"
-export AQUA_REMOVE_MODE=pl
-export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:$HOME/.config/aquaproj-aqua/aqua.yaml
-
-source <(aqua completion zsh)
+if command -v aqua &> /dev/null; then
+  export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua/bin:$PATH"
+  export AQUA_REMOVE_MODE=pl
+  export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:$HOME/.config/aquaproj-aqua/aqua.yaml
+  source <(aqua completion zsh)
+fi
 
 # direnv
-eval "$(direnv hook zsh)"
+if command -v direnv &> /dev/null; then
+  eval "$(direnv hook zsh)"
+fi
 
 # chezmoi
-source <(chezmoi completion zsh)
+if command -v chezmoi &> /dev/null; then
+  source <(chezmoi completion zsh)
+fi
+
+# zoxide
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init zsh)"
+fi
 
 # claude code
 export CLAUDE_CONFIG_DIR=$HOME/.config/claude
