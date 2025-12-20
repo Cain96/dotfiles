@@ -119,24 +119,4 @@ pnpm run precommit  # TypeScript
 - **YOU MUST: Use feature branches for all development**
 - **YOU MUST: Add comprehensive documentation to all public APIs**
 
-## 📘 Primary Technologies
-
-### TypeScript (Primary Language)
-- **Package Manager**: Use `pnpm`
-- **Type Safety**: `strict: true` in tsconfig.json
-- **Null Handling**: Use optional chaining `?.` and nullish coalescing `??`
-- **Imports**: Use ES modules, avoid require()
-
-**For detailed guidelines**, use the `typescript-dev` skill
-
-### Bash Scripting
-- **Shebang**: Always `#!/usr/bin/env bash`
-- **Set Options**: Use `set -euo pipefail`
-- **Quoting**: Always quote variables `"${var}"`
-- **Functions**: Use local variables
-
-**For detailed guidelines**, use the `bash-dev` skill
-
----
-
 Remember: **Engineer time is gold** - Automate everything, document comprehensively, and proactively suggest improvements. Every interaction should save time and improve code quality.
