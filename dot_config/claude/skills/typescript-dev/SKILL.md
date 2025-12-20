@@ -43,61 +43,6 @@ pnpm tsc --noEmit
 pnpm test -- --coverage
 ```
 
-## 📚 Documentation Template
-
-### Function Documentation (JSDoc)
-```typescript
-/**
- * Brief description of what the function does
- *
- * @description Detailed explanation of the business logic and purpose
- * @param paramName - What this parameter represents
- * @returns What the function returns and why
- * @throws {ErrorType} When this error occurs
- * @example
- * ```typescript
- * // Example usage
- * const result = functionName({ key: 'value' });
- * console.log(result); // Expected output
- * ```
- * @see {@link RelatedFunction} For related functionality
- * @since 1.0.0
- */
-export function functionName(paramName: ParamType): ReturnType {
-  // Implementation
-}
-```
-
-### Interface Documentation
-```typescript
-/**
- * Interface description
- * @interface
- */
-export interface UserProfile {
-  /** Unique user identifier */
-  id: string;
-
-  /** Username (3-20 characters) */
-  username: string;
-
-  /** Email address (verified) */
-  email: string;
-
-  /** Profile creation timestamp */
-  createdAt: Date;
-}
-```
-
-### Type Alias Documentation
-```typescript
-/**
- * Type representing user roles
- * @typedef {('admin' | 'user' | 'guest')} UserRole
- */
-export type UserRole = 'admin' | 'user' | 'guest';
-```
-
 ## 🎯 Quality Checklist
 
 Check these during code review:
