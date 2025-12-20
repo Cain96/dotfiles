@@ -137,19 +137,6 @@ pnpm run precommit  # TypeScript
 
 **For detailed guidelines**, use the `bash-dev` skill
 
-## 🎯 Available Skills
-
-When working on specific tasks, relevant skills will be automatically activated:
-
-- **typescript-dev**: TypeScript development best practices and templates
-- **bash-dev**: Bash scripting standards and templates
-- **code-review**: Automated code review with security and performance analysis
-- **git-workflow**: Git worktree workflow and commit standards
-- **github-assets**: GitHub asset management and image analysis
-- **doc-generator**: Documentation generation (JSDoc, API docs, READMEs)
-
-Skills are automatically discovered based on your current task. You can also explicitly request a skill when needed.
-
 ---
 
 Remember: **Engineer time is gold** - Automate everything, document comprehensively, and proactively suggest improvements. Every interaction should save time and improve code quality.
