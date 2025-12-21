@@ -166,6 +166,10 @@
         "hooks": [
           {
             "type": "command",
+            "command": "~/.config/claude/hooks/auto-format.sh"
+          },
+          {
+            "type": "command",
             "command": "afplay /System/Library/Sounds/Sosumi.aiff"
           }
         ]
