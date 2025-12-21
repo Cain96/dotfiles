@@ -11,16 +11,26 @@ set -euo pipefail
 # Log Format:
 #   [YYYY-MM-DD HH:MM:SS] username: command
 #
-# Log File:
-#   ~/.config/claude/logs/command_history.log
+# Log File Structure:
+#   ~/.config/claude/logs/YYYY-MM/YYYY-MM-DD.log
+#   Example: ~/.config/claude/logs/2025-01/2025-01-15.log
 #
 # =============================================================================
 
-# Log file path
-LOG_DIR="${HOME}/.config/claude/logs"
-LOG_FILE="${LOG_DIR}/command_history.log"
+# Base log directory
+BASE_LOG_DIR="${HOME}/.config/claude/logs"
 
-# Create log directory if it doesn't exist
+# Get current date components
+year_month=$(date '+%Y-%m')
+date_str=$(date '+%Y-%m-%d')
+
+# Create monthly directory path
+LOG_DIR="${BASE_LOG_DIR}/${year_month}"
+
+# Create log file path (daily file)
+LOG_FILE="${LOG_DIR}/${date_str}.log"
+
+# Create monthly directory if it doesn't exist
 mkdir -p "$LOG_DIR"
 
 # Read hook input from Claude Code via stdin
