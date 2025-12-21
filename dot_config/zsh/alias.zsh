@@ -3,12 +3,6 @@
 setopt aliases
 
 # core
-alias ls='ls -G'
-alias l='ls -l'
-alias ll='ls -l'
-alias lf='ls -f'
-alias ld='ls -d'
-alias la='ls -la'
 alias so='source'
 alias q='quit'
 alias c='clear'
@@ -18,6 +12,24 @@ alias mv='mv -v'
 alias rm='rm -v'
 alias up='cd ..'
 alias f='open .'
+
+# eza (Alternative ls)
+_ls() { eza --icons --git "$@" }
+alias ls='_ls'
+alias l='_ls -l'
+alias ll='_ls -l'
+alias lf='_ls -f'
+alias ld='_ls -d'
+alias la='_ls -aahl'
+alias lt='_ls -T -L 3 -a -I "node_modules|.git|.cache"'
+
+# bat (Alternative cat)
+alias cat='bat'
+
+# fd (Alternative find)
+alias find='fd'
+
+# ripgrep (Alternative grep)
 alias grep='rg --color=always'
 
 # vim / neovim
