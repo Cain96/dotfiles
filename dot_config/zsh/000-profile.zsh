@@ -23,42 +23,65 @@ setopt inc_append_history      # 実行時に履歴をファイルに追加し�
 # 補完の設定
 autoload -Uz compinit && compinit
 
-# ツールチェック用ヘルパー関数
-check_and_init() {
-  local tool_name="$1"
-  local init_command="$2"
-
-  if command -v "$tool_name" &> /dev/null; then
-    eval "$init_command"
-  else
-    echo "⚠️  ${tool_name}: not found" >&2
-  fi
-}
+## キャッシュディレクトリ
+ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
 
 # brew
-if [ -x /opt/homebrew/bin/brew ]; then
+if [ -f "$ZSH_CACHE_DIR/brew-shellenv.sh" ]; then
+  source "$ZSH_CACHE_DIR/brew-shellenv.sh"
+elif [ -x /opt/homebrew/bin/brew ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 else
   echo "⚠️  brew: not found" >&2
 fi
 
 # mise
-check_and_init "mise" 'eval "$(mise activate zsh)"'
+if [ -f "$ZSH_CACHE_DIR/mise-activate.sh" ]; then
+  source "$ZSH_CACHE_DIR/mise-activate.sh"
+elif command -v mise &> /dev/null; then
+  eval "$(mise activate zsh)"
+else
+  echo "⚠️  mise: not found" >&2
+fi
 
 # aqua
-check_and_init "aqua" 'export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua/bin:$PATH"; export AQUA_REMOVE_MODE=pl; export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:$HOME/.config/aquaproj-aqua/aqua.yaml; source <(aqua completion zsh)'
+export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua/bin:$PATH"
+export AQUA_REMOVE_MODE=pl
+export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:$HOME/.config/aquaproj-aqua/aqua.yaml
+if [ -f "$ZSH_CACHE_DIR/aqua-completion.sh" ]; then
+  source "$ZSH_CACHE_DIR/aqua-completion.sh"
+elif command -v aqua &> /dev/null; then
+  source <(aqua completion zsh)
+fi
 
 # direnv
-check_and_init "direnv" 'eval "$(direnv hook zsh)"'
+if [ -f "$ZSH_CACHE_DIR/direnv-hook.sh" ]; then
+  source "$ZSH_CACHE_DIR/direnv-hook.sh"
+elif command -v direnv &> /dev/null; then
+  eval "$(direnv hook zsh)"
+fi
 
 # chezmoi
-check_and_init "chezmoi" 'source <(chezmoi completion zsh)'
+if [ -f "$ZSH_CACHE_DIR/chezmoi-completion.sh" ]; then
+  source "$ZSH_CACHE_DIR/chezmoi-completion.sh"
+elif command -v chezmoi &> /dev/null; then
+  source <(chezmoi completion zsh)
+fi
 
 # zoxide
-check_and_init "zoxide" 'eval "$(zoxide init zsh --cmd cd)"'
+if [ -f "$ZSH_CACHE_DIR/zoxide-init.sh" ]; then
+  source "$ZSH_CACHE_DIR/zoxide-init.sh"
+elif command -v zoxide &> /dev/null; then
+  eval "$(zoxide init zsh --cmd cd)"
+fi
 
 # claude code
 export CLAUDE_CONFIG_DIR=$HOME/.config/claude
 
 # safe-chain
 source $HOME/.safe-chain/scripts/init-posix.sh
+
+# キャッシュファイルを非同期で更新（バックグラウンド実行）
+if [ -x $HOME/.local/bin/update-zsh-cache.sh ]; then
+  ($HOME/.local/bin/update-zsh-cache.sh > /dev/null 2>&1 &)
+fi
