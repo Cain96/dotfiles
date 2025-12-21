@@ -55,7 +55,7 @@ check_and_init "direnv" 'eval "$(direnv hook zsh)"'
 check_and_init "chezmoi" 'source <(chezmoi completion zsh)'
 
 # zoxide
-check_and_init "zoxide" 'eval "$(zoxide init zsh)"'
+check_and_init "zoxide" 'eval "$(zoxide init zsh --cmd cd)"'
 
 # claude code
 export CLAUDE_CONFIG_DIR=$HOME/.config/claude
