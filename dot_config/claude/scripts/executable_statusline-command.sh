@@ -45,21 +45,21 @@ status_parts=()
 
 # Model name
 if [ -n "$model_name" ]; then
-    status_parts+=("🤖 $model_name")
+    status_parts+=("󰚩  $model_name")
 fi
 
 # Current directory (basename only)
 dir_name=$(basename "$current_dir")
-status_parts+=("$dir_name")
+status_parts+=("  $dir_name")
 
 # Git branch
 if [ -n "$git_branch" ]; then
-    status_parts+=("git:$git_branch")
+    status_parts+=(" $git_branch")
 fi
 
 # Context usage percentage
 if [ -n "$context_pct" ]; then
-    status_parts+=("context:$context_pct")
+    status_parts+=("  $context_pct")
 fi
 
 # Final output (join elements with " | ")
