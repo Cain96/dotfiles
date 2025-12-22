@@ -48,30 +48,48 @@ format_js_ts_json() {
     local file_dir
     file_dir=$(dirname "$file")
 
-    # Try Biome first
-    if cd "$file_dir" && nr biome check --write --unsafe "$file" 2>&1; then
+    # Find project root (directory containing package.json)
+    local project_root="$file_dir"
+    while [ "$project_root" != "/" ]; do
+        if [ -f "$project_root/package.json" ]; then
+            break
+        fi
+        project_root=$(dirname "$project_root")
+    done
+
+    # Check if project root was found
+    if [ "$project_root" = "/" ]; then
+        # No package.json found, skip silently
         return 0
     fi
 
-    # If Biome failed with error, check if it's because it's not installed
-    local biome_exit_code=$?
-    if [ $biome_exit_code -ne 0 ] && [ $biome_exit_code -ne 127 ]; then
-        # Biome exists but failed to format
-        echo "❌ Biome formatting failed for: $file" >&2
-        return 2
+    local biome_bin="$project_root/node_modules/.bin/biome"
+    local prettier_bin="$project_root/node_modules/.bin/prettier"
+
+    # Try Biome first
+    if [ -x "$biome_bin" ]; then
+        if cd "$file_dir" && "$biome_bin" check --write --unsafe "$file" 2>&1; then
+            return 0
+        fi
+        local biome_exit_code=$?
+        if [ $biome_exit_code -ne 0 ]; then
+            # Biome exists but failed to format
+            echo "❌ Biome formatting failed for: $file" >&2
+            return 2
+        fi
     fi
 
     # Fallback to Prettier
-    if cd "$file_dir" && nr prettier --write "$file" 2>&1; then
-        return 0
-    fi
-
-    # If Prettier failed with error
-    local prettier_exit_code=$?
-    if [ $prettier_exit_code -ne 0 ] && [ $prettier_exit_code -ne 127 ]; then
-        # Prettier exists but failed to format
-        echo "❌ Prettier formatting failed for: $file" >&2
-        return 2
+    if [ -x "$prettier_bin" ]; then
+        if cd "$file_dir" && "$prettier_bin" --write "$file" 2>&1; then
+            return 0
+        fi
+        local prettier_exit_code=$?
+        if [ $prettier_exit_code -ne 0 ]; then
+            # Prettier exists but failed to format
+            echo "❌ Prettier formatting failed for: $file" >&2
+            return 2
+        fi
     fi
 
     # Neither formatter is available, skip silently
