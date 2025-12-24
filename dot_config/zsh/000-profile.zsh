@@ -72,7 +72,7 @@ fi
 if [ -f "$ZSH_CACHE_DIR/zoxide-init.sh" ]; then
   source "$ZSH_CACHE_DIR/zoxide-init.sh"
 elif command -v zoxide &> /dev/null; then
-  eval "$(zoxide init zsh --cmd cd)"
+  eval "$(zoxide init zsh)"
 fi
 
 # claude code

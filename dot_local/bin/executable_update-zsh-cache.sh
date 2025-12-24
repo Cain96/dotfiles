@@ -36,5 +36,5 @@ fi
 
 # zoxide init
 if command -v zoxide &> /dev/null; then
-  zoxide init zsh --cmd cd > "$CACHE_DIR/zoxide-init.sh" 2>/dev/null || true
+  zoxide init zsh > "$CACHE_DIR/zoxide-init.sh" 2>/dev/null || true
 fi
