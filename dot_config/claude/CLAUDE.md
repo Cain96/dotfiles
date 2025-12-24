@@ -36,6 +36,17 @@ This is my global Claude Code configuration directory (`~/.config/claude`) that 
 - **Benefits:** Direct API access, structured data, and better integration with GitHub features
 - **Fallback:** Only use WebFetch or other tools if `gh` command is not available or fails
 
+### Shell Command Execution
+**When executing basic Unix commands, always use full paths to avoid shell aliases and functions:**
+- **YOU MUST: Use full paths for these commands:**
+  - `/bin/ls` instead of `ls`
+  - `/bin/cat` instead of `cat`
+  - `/usr/bin/find` instead of `find`
+  - `/usr/bin/grep` instead of `grep`
+  - `/bin/cd` (though `cd` is typically a shell builtin, be aware of potential CDPATH modifications)
+- **Rationale:** Shell aliases and custom functions can modify command behavior unexpectedly
+- **Benefits:** Ensures consistent, predictable command behavior across all environments
+
 ### Efficient Professional Workflow
 **Smart Explore-Plan-Code-Commit with time-saving automation**
 
