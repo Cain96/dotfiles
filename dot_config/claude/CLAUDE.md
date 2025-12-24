@@ -43,7 +43,6 @@ This is my global Claude Code configuration directory (`~/.config/claude`) that 
   - `/bin/cat` instead of `cat`
   - `/usr/bin/find` instead of `find`
   - `/usr/bin/grep` instead of `grep`
-  - `/bin/cd` (though `cd` is typically a shell builtin, be aware of potential CDPATH modifications)
 - **Rationale:** Shell aliases and custom functions can modify command behavior unexpectedly
 - **Benefits:** Ensures consistent, predictable command behavior across all environments
 
