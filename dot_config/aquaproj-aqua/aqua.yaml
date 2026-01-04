@@ -4,7 +4,7 @@
 # https://aquaproj.github.io/
 registries:
   - type: standard
-    ref: v4.446.0 # renovate: depName=aquaproj/aqua-registry
+    ref: v4.448.1 # renovate: depName=aquaproj/aqua-registry
 packages:
   - name: suzuki-shunsuke/pinact@v3.6.0
   - name: google/go-jsonnet@v0.21.0
