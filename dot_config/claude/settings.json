@@ -7,7 +7,8 @@
     "BASH_DEFAULT_TIMEOUT_MS": "300000",
     "BASH_MAX_TIMEOUT_MS": "1200000",
     "SHELL": "/bin/zsh",
-    "EDITOR": "/opt/homebrew/bin/nvim",
+    "EDITOR": "cursor --wait",
+    "VISUAL": "cursor --wait",
     "NODE_OPTIONS": "--max-old-space-size=4096"
   },
   "attribution": {
@@ -212,5 +213,6 @@
     "frontend-design@claude-code-plugins": true
   },
   "theme": "dark",
-  "preferredNotifChannel": "terminal_bell"
+  "preferredNotifChannel": "terminal_bell",
+  "plansDirectory": "./.claude/plans"
 }
