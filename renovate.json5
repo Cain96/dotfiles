@@ -8,7 +8,7 @@
     // GitHub Actionsのダイジェストを固定する
     "helpers:pinGitHubActionDigests",
     // aquaの設定を追加する
-    "github>aquaproj/aqua-renovate-config#2.9.0",
+    "github>aquaproj/aqua-renovate-config#2.10.0",
   ],
   // 毎週月曜午前6〜9時に動作
   schedule: ["* 6-9 * * 1"],
