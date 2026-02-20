@@ -68,7 +68,7 @@ format_js_ts_json() {
 
     # Try Biome first
     if [ -x "$biome_bin" ]; then
-        if cd "$file_dir" && "$biome_bin" check --write --unsafe "$file" 2>&1; then
+        if cd "$file_dir" && "$biome_bin" format --write "$file" 2>&1; then
             return 0
         fi
         local biome_exit_code=$?
