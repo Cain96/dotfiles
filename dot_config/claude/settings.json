@@ -221,8 +221,10 @@
     "code-review@claude-plugins-official": true,
     "pr-review-toolkit@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,
-    "frontend-design@claude-code-plugins": true
+    "frontend-design@claude-code-plugins": true,
+    "claude-md-management@claude-plugins-official": true
   },
+  "model": "sonnet",
   "theme": "dark",
   "preferredNotifChannel": "terminal_bell",
   "plansDirectory": "./.claude/plans"
