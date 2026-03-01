@@ -162,11 +162,11 @@ function isProcessable(order) {
 
 🔒 Security
 ✅ No critical issues detected
-⚠️  1 warning
+⚠  1 warning
   - Input validation: Add sanitization for user-generated content (line 89)
 
-🛠️ Maintainability
-⚠️ 2 method extractions recommended
+🛠 Maintainability
+⚠ 2 method extractions recommended
   - validateUserInput: Complexity 15 → recommend <10 (line 156)
   - processPaymentData: Length 120 lines → recommend <50 (line 234)
 
@@ -181,7 +181,7 @@ function isProcessable(order) {
     - Test boundary values (validation.test.ts)
 
 📚 Documentation
-⚠️ 2 functions missing proper documentation
+⚠ 2 functions missing proper documentation
   - calculateTotalPrice(): Add JSDoc (line 45)
   - formatUserData(): Missing parameter descriptions (line 123)
 

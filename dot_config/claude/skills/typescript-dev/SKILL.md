@@ -36,7 +36,7 @@ This skill supports TypeScript project development.
 - **Self-documenting code**: Prefer clear naming over excessive comments
 - **Document when necessary**: Add TSDoc only when the code intent isn't obvious from the signature
 
-## 🛠️ Code Quality Tools
+## 🛠 Code Quality Tools
 
 ### Development Workflow
 ```bash

@@ -169,7 +169,7 @@ esac
 main "$@"
 ```
 
-## 🛠️ Common Patterns
+## 🛠 Common Patterns
 
 ### Error Handling
 ```bash

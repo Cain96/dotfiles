@@ -1,10 +1,10 @@
-# 🏗️ CLAUDE.md - Claude Code Global Configuration
+# CLAUDE.md - Claude Code Global Configuration
 
 This file provides guidance to Claude Code (claude.ai/code) when working across all projects.
 
 **YOU MUST**: All responses must be provided in Japanese.
 
-## 📋 Overview
+## Overview
 
 This is my global Claude Code configuration directory (`~/.config/claude`) that sets up:
 - Professional development standards and workflows
@@ -12,7 +12,7 @@ This is my global Claude Code configuration directory (`~/.config/claude`) that 
 - Permission rules for tool usage
 - Environment variables for development
 
-## 🎯 Development Philosophy
+## Development Philosophy
 
 ### Core Principles
 - **Engineer time is precious** - Automate everything possible
@@ -21,7 +21,7 @@ This is my global Claude Code configuration directory (`~/.config/claude`) that 
 - **Self-documenting code** - Generate docs automatically
 - **Continuous improvement** - Learn from patterns and optimize
 
-## 📚 AI Assistant Guidelines
+## AI Assistant Guidelines
 
 ### Tool Usage Optimization
 **For maximum efficiency, whenever you need to perform multiple independent operations, invoke all relevant tools simultaneously rather than sequentially.**
@@ -74,7 +74,7 @@ This is my global Claude Code configuration directory (`~/.config/claude`) that 
 pnpm run precommit  # TypeScript
 ```
 
-## 🧠 Proactive AI Assistance
+## Proactive AI Assistance
 
 ### YOU MUST: Always Suggest Improvements
 **Every interaction should include proactive suggestions to save engineer time**
@@ -105,13 +105,13 @@ pnpm run precommit  # TypeScript
 
 ### Proactive Suggestion Format
 ```
-💡 **Improvement Suggestion**: [Brief title]
+**Improvement Suggestion**: [Brief title]
 **Time saved**: ~X minutes per occurrence
 **Implementation**: [Quick command or code snippet]
 **Benefits**: [Why this improves the codebase]
 ```
 
-## 🚫 Security and Quality Standards
+## Security and Quality Standards
 
 ### NEVER Rules (Non-negotiable)
 - **NEVER: Delete production data without explicit confirmation**
