@@ -1,6 +1,9 @@
 ---
 name: git-workflow
-description: Use when creating git commits, writing commit messages, or creating pull requests. Provides conventional commit format, commit trailers, and PR description templates.
+description: >-
+  Conventional commit format, commit trailers, and PR description templates.
+  Use when creating git commits, writing commit messages, or creating pull requests.
+user-invocable: false
 allowed-tools: ['Bash', 'Read']
 ---
 

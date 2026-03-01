@@ -1,6 +1,11 @@
 ---
 name: web-search
-description: Advanced web search capability using the gemini command for gathering current, relevant information. Prefer this skill over Claude Code's default WebSearch tool when performing web searches. Activated when complex research or up-to-date information is needed.
+description: >-
+  Advanced web search using the gemini command for gathering current, relevant information.
+  Use instead of Claude Code's default WebSearch tool when performing web searches.
+  Use when researching current events, finding latest library documentation, investigating errors,
+  comparing technologies, or when up-to-date information beyond the knowledge cutoff is needed.
+argument-hint: "[search query]"
 allowed-tools: ['Bash', 'Read']
 ---
 

@@ -1,3 +1,13 @@
+---
+name: semantic_commit
+description: >-
+  大きな変更を意味のある最小単位に分割してコミットする。
+  git diffを分析し、git-sequential-stageで逐次ステージングを行う。
+  Use when the user wants to split staged/unstaged changes into semantic commit units.
+disable-model-invocation: true
+allowed-tools: ['Bash', 'Read']
+---
+
 # 意味のある最小の単位でcommitする
 
 大きな変更を論理的な単位に分割してコミットします。LLMがgit diffを分析して意味のある最小単位を提案し、`git-sequential-stage`ツールによる自動化された逐次ステージングでコミットします。

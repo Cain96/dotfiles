@@ -1,6 +1,11 @@
 ---
-description: "DESIGN.mdを読み込み、技術実装・UI/UX・懸念点・トレードオフについて深掘りインタビューを実施し、仕様をDESIGN.mdに書き出す"
+name: interview
+description: >-
+  DESIGN.mdを読み込み、技術実装・UI/UX・懸念点・トレードオフについて深掘りインタビューを実施し、
+  仕様をDESIGN.mdに書き出す。
+  Use when the user wants to refine a design document through structured interview questions.
 argument-hint: "[DESIGN.mdパス]"
+disable-model-invocation: true
 allowed-tools: ["Read", "Write", "Edit", "AskUserQuestion", "Glob"]
 ---
 
