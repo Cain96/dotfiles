@@ -1,6 +1,12 @@
 ---
 name: github-pr-review-operation
-description: GitHub Pull Request review operations using gh CLI. Extract PR info, view diffs with line numbers, retrieve and post comments, create inline comments, and reply to comments. Use when reviewing PRs, conducting code reviews, or performing PR operations.
+description: >-
+  GitHub Pull Request review operations using gh CLI.
+  Use when reviewing PRs, posting inline or review comments, viewing PR diffs with line numbers,
+  replying to PR comments, or performing any GitHub PR operation via the gh CLI.
+  Triggered by PR URLs, gh pr commands, or requests to review/comment on a pull request.
+user-invocable: false
+allowed-tools: ['Bash', 'Read']
 ---
 
 # GitHub PR Review Operation

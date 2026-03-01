@@ -1,6 +1,10 @@
 ---
 name: typescript-dev
-description: TypeScript development best practices, code quality tools, and documentation templates. Activated when working with .ts, .tsx files or TypeScript projects.
+description: >-
+  TypeScript development best practices, code quality tools, and documentation conventions.
+  Use when writing, editing, or reviewing .ts or .tsx files, when setting up a TypeScript project,
+  when the user asks about TypeScript patterns/conventions, or when type safety guidance is needed.
+user-invocable: false
 allowed-tools: ['Read', 'Glob', 'Grep', 'Bash']
 ---
 

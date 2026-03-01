@@ -1,6 +1,9 @@
 ---
 name: code-review
-description: Automated code review analyzing security, performance, maintainability, and test coverage. Activated during code reviews or when conducting analysis.
+description: >-
+  Comprehensive code review analyzing security, performance, maintainability, and test coverage.
+  Use when the user asks for a code review, when analyzing code quality or security of changes,
+  when reviewing changes before a PR, or when conducting static analysis of code.
 allowed-tools: ['Read', 'Grep', 'Glob']
 ---
 
