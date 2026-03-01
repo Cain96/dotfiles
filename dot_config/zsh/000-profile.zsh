@@ -32,7 +32,7 @@ if [ -f "$ZSH_CACHE_DIR/brew-shellenv.sh" ]; then
 elif [ -x /opt/homebrew/bin/brew ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 else
-  echo "⚠️  brew: not found" >&2
+  echo "⚠  brew: not found" >&2
 fi
 
 # mise
@@ -41,7 +41,7 @@ if [ -f "$ZSH_CACHE_DIR/mise-activate.sh" ]; then
 elif command -v mise &> /dev/null; then
   eval "$(mise activate zsh)"
 else
-  echo "⚠️  mise: not found" >&2
+  echo "⚠  mise: not found" >&2
 fi
 
 # aqua
