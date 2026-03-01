@@ -10,6 +10,6 @@ packages:
   - name: google/go-jsonnet@v0.21.0
   - name: aws/aws-cli@2.33.22
   - name: direnv/direnv@v2.37.1
-  - name: 1password/cli@v2.32.0
+  - name: 1password/cli@v2.32.1
   - name: aws/copilot-cli@v1.34.1
   - name: go-task/task@v3.48.0
