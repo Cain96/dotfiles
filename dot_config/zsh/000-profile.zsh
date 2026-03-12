@@ -36,6 +36,7 @@ else
 fi
 
 # mise
+export PATH="$HOME/.local/share/mise/shims:$PATH"
 if [ -f "$ZSH_CACHE_DIR/mise-activate.sh" ]; then
   source "$ZSH_CACHE_DIR/mise-activate.sh"
 elif command -v mise &> /dev/null; then
