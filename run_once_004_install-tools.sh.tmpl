@@ -21,4 +21,21 @@ cargo install confirm-pam
 echo "Installing similarity-ts..."
 cargo install similarity-ts
 
+# nippoのインストールとskillセットアップ
+# https://syu-m-5151.hatenablog.com/entry/2026/03/21/160442
+echo "Installing nippo..."
+cargo install nippo
+
+NIPPO_DIR="${HOME}/workspace/github.com/nwiizo/nippo"
+SKILL_LINK="${HOME}/.config/claude/skills/nippo"
+
+if [ ! -d "${NIPPO_DIR}" ]; then
+    git clone https://github.com/nwiizo/nippo "${NIPPO_DIR}"
+fi
+
+if [ ! -L "${SKILL_LINK}" ]; then
+    mkdir -p "${HOME}/.config/claude/skills"
+    ln -s "${NIPPO_DIR}/.claude/skills/nippo" "${SKILL_LINK}"
+fi
+
 {{ end }}

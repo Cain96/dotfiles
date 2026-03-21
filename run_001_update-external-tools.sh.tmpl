@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# 外部ツールのアップデート（chezmoi apply のたびに実行）
+{{ if eq .chezmoi.os "darwin" }}
+
+# nippo のアップデート
+NIPPO_DIR="${HOME}/workspace/github.com/nwiizo/nippo"
+
+if [ -d "${NIPPO_DIR}" ]; then
+    echo "Updating nippo..."
+    git -C "${NIPPO_DIR}" pull --ff-only --quiet
+fi
+
+{{ end }}
