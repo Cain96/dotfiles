@@ -11,6 +11,7 @@
 !dot_*/**
 !run_once_**
 !run_onchange_**
+!run_**
 
 # vscode
 !.vscode/settings.json
