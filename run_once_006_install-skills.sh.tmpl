@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Claude Code skills のインストール
+# macOS環境でのみ実行
+{{ if eq .chezmoi.os "darwin" }}
+
+# agent-browser skill のセットアップ
+# https://github.com/vercel-labs/agent-browser
+echo "Setting up agent-browser skill..."
+npx skills add https://github.com/vercel-labs/agent-browser --skill agent-browser --yes --global
+
+echo "Please install Chrome for agent-browser..."
+echo "Then run the following command:"
+echo "agent-browser install"
+
+{{ end }}
