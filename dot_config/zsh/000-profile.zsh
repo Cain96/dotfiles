@@ -35,6 +35,9 @@ else
   echo "⚠  brew: not found" >&2
 fi
 
+# local bin
+export PATH="$HOME/.local/bin:$PATH"
+
 # mise
 export PATH="$HOME/.local/share/mise/shims:$PATH"
 if [ -f "$ZSH_CACHE_DIR/mise-activate.sh" ]; then
