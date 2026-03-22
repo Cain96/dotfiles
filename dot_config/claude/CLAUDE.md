@@ -130,3 +130,13 @@ pnpm run precommit  # TypeScript
 - **YOU MUST: Add comprehensive documentation to all public APIs**
 
 Remember: **Engineer time is gold** - Automate everything, document comprehensively, and proactively suggest improvements. Every interaction should save time and improve code quality.
+
+## AI Working Directory
+
+When working in any project, place the following files under the `.Cain96/` directory:
+- Planning documents and design notes (e.g. `plan.md`)
+- Screenshots and captures
+- Temporary files and research notes
+
+`.Cain96/` is registered in the global gitignore and will never be committed to any repository.
+Always use this directory to keep AI working files clearly separated from production code.
