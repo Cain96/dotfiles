@@ -131,6 +131,11 @@ pnpm run precommit  # TypeScript
 
 Remember: **Engineer time is gold** - Automate everything, document comprehensively, and proactively suggest improvements. Every interaction should save time and improve code quality.
 
+## Tool Execution Notes
+
+The Bash tool runs inside a sandbox, so file access and network connections may fail.
+In such cases, ask the user for guidance.
+
 ## AI Working Directory
 
 When working in any project, place the following files under the `.Cain96/` directory:
