@@ -260,7 +260,7 @@
     "enabled": true,
     "allowUnsandboxedCommands": false,
     "autoAllowBashIfSandboxed": true,
-    "excludedCommands": ["git", "docker"],
+    "excludedCommands": ["git:*", "gh:*", "docker:*"],
     "filesystem": {
       "denyRead": [
         "~/.ssh/**",
