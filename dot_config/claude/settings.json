@@ -1,5 +1,4 @@
 {
-  "language": "ja",
   "cleanupPeriodDays": 60,
   "env": {
     "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR": "1",
@@ -267,23 +266,37 @@
     "pr-review-toolkit@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,
     "frontend-design@claude-code-plugins": true,
-    "claude-md-management@claude-plugins-official": true
+    "claude-md-management@claude-plugins-official": true,
+    "ruby-lsp@claude-plugins-official": true,
+    "example-skills@anthropic-agent-skills": true,
+    "warp@claude-code-warp": true,
+    "ast-grep@ast-grep-marketplace": true
   },
+  "extraKnownMarketplaces": {
+    "anthropic-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/skills"
+      }
+    },
+    "claude-code-warp": {
+      "source": {
+        "source": "github",
+        "repo": "warpdotdev/claude-code-warp"
+      }
+    },
+    "ast-grep-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "ast-grep/agent-skill"
+      }
+    }
+  },
+  "language": "ja",
   "sandbox": {
     "enabled": true,
-    "allowUnsandboxedCommands": false,
     "autoAllowBashIfSandboxed": true,
-    "excludedCommands": ["git:*", "gh:*", "docker:*"],
-    "filesystem": {
-      "denyRead": [
-        "~/.ssh/**",
-        "~/.aws/credentials",
-        "~/.aws/config",
-        "~/.config/gcloud/**",
-        "~/**/.env",
-        "~/**/.env.*"
-      ]
-    },
+    "allowUnsandboxedCommands": false,
     "network": {
       "allowedDomains": [
         "github.com",
@@ -295,10 +308,25 @@
         "*.anthropic.com"
       ],
       "allowLocalBinding": true
-    }
+    },
+    "filesystem": {
+      "denyRead": [
+        "~/.ssh/**",
+        "~/.aws/credentials",
+        "~/.aws/config",
+        "~/.config/gcloud/**",
+        "~/**/.env",
+        "~/**/.env.*"
+      ]
+    },
+    "excludedCommands": [
+      "git:*",
+      "gh:*",
+      "docker:*",
+      "agent-browser:*"
+    ]
   },
-  "model": "sonnet",
+  "plansDirectory": "./.claude/plans",
   "theme": "dark",
-  "preferredNotifChannel": "terminal_bell",
-  "plansDirectory": "./.claude/plans"
+  "preferredNotifChannel": "terminal_bell"
 }
