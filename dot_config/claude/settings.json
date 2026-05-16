@@ -12,7 +12,9 @@
     "SHELL": "/bin/zsh",
     "EDITOR": "cursor --wait",
     "VISUAL": "cursor --wait",
-    "NODE_OPTIONS": "--max-old-space-size=4096"
+    "NODE_OPTIONS": "--max-old-space-size=4096",
+    "BUN_INSTALL_CACHE_DIR": "/tmp/claude/bun-cache",
+    "NPM_CONFIG_CACHE": "/tmp/claude/npm-cache"
   },
   "attribution": {
     "commit": "🤖 Generated with Claude Code",
@@ -177,7 +179,7 @@
       "Edit(~/.config/gcloud/**)",
       "Write(~/.config/gcloud/**)"
     ],
-    "defaultMode": "acceptEdits"
+    "defaultMode": "auto"
   },
   "hooks": {
     "SessionStart": [
@@ -310,6 +312,7 @@
       "allowLocalBinding": true
     },
     "filesystem": {
+      "allowWrite": ["/var/folders/*/*/T/**", "~/.bun/install/**"],
       "denyRead": [
         "~/.ssh/**",
         "~/.aws/credentials",
@@ -319,14 +322,10 @@
         "~/**/.env.*"
       ]
     },
-    "excludedCommands": [
-      "git:*",
-      "gh:*",
-      "docker:*",
-      "agent-browser:*"
-    ]
+    "excludedCommands": ["git:*", "gh:*", "docker:*", "agent-browser:*"]
   },
   "plansDirectory": "./.claude/plans",
   "theme": "dark",
-  "preferredNotifChannel": "terminal_bell"
+  "preferredNotifChannel": "terminal_bell",
+  "skipAutoPermissionPrompt": true
 }
