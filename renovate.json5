@@ -20,7 +20,7 @@
   platformAutomerge: true,
   /**
    * version公開後、数日経ってからreadyにする
-   *　@see https://docs.renovatebot.com/configuration-options/#stabilitydays
+   * @see https://docs.renovatebot.com/configuration-options/#stabilitydays
    */
   major: {
     minimumReleaseAge: "14 days",
