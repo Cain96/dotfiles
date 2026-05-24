@@ -1,8 +1,14 @@
 ---
 name: git-workflow
 description: >-
-  Conventional commit format, commit trailers, and PR description templates.
-  Use when creating git commits, writing commit messages, or creating pull requests.
+  Conventional commit format, commit trailers, PR description templates, and
+  git workflow operations (branching, rebasing, merging, stashing, cherry-picking,
+  bisecting, reverting, pushing, pulling). Use whenever the user performs any
+  git operation or invokes any `git` command — including creating commits,
+  writing commit messages, creating or reviewing pull requests, managing
+  branches, rebasing, stashing, cherry-picking, bisecting, or pushing/pulling.
+  Do NOT use for purely conceptual questions about git internals that involve
+  no actual operation.
 user-invocable: false
 allowed-tools: ['Bash', 'Read']
 ---
