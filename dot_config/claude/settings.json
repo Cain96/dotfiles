@@ -264,7 +264,6 @@
   "enabledPlugins": {
     "context7@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
-    "code-review@claude-plugins-official": true,
     "pr-review-toolkit@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,
     "frontend-design@claude-code-plugins": true,
