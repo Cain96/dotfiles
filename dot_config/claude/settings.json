@@ -271,7 +271,8 @@
     "ruby-lsp@claude-plugins-official": true,
     "example-skills@anthropic-agent-skills": true,
     "warp@claude-code-warp": true,
-    "ast-grep@ast-grep-marketplace": true
+    "ast-grep@ast-grep-marketplace": true,
+    "codex@openai-codex": true
   },
   "extraKnownMarketplaces": {
     "anthropic-agent-skills": {
@@ -290,6 +291,12 @@
       "source": {
         "source": "github",
         "repo": "ast-grep/agent-skill"
+      }
+    },
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
       }
     }
   },
@@ -311,7 +318,10 @@
       "allowLocalBinding": true
     },
     "filesystem": {
-      "allowWrite": ["/var/folders/*/*/T/**", "~/.bun/install/**"],
+      "allowWrite": [
+        "/var/folders/*/*/T/**",
+        "~/.bun/install/**"
+      ],
       "denyRead": [
         "~/.ssh/**",
         "~/.aws/credentials",
@@ -321,8 +331,14 @@
         "~/**/.env.*"
       ]
     },
-    "excludedCommands": ["git:*", "gh:*", "docker:*", "agent-browser:*"]
+    "excludedCommands": [
+      "git:*",
+      "gh:*",
+      "docker:*",
+      "agent-browser:*"
+    ]
   },
+  "effortLevel": "xhigh",
   "plansDirectory": "./.claude/plans",
   "theme": "dark",
   "preferredNotifChannel": "terminal_bell",
