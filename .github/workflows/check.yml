@@ -47,7 +47,7 @@ jobs:
         env:
           AQUA_CONFIG: ".aqua/aqua.yaml"
         with:
-          aqua_version: "v2.57.2"
+          aqua_version: "v2.59.0"
 
       - name: Run pinact
         run: pinact run --check
