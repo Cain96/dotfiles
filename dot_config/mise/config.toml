@@ -15,6 +15,7 @@ rust = "latest"
 ruby = "latest"
 lefthook = "latest"
 "npm:@ast-grep/cli" = "latest"
+ghalint = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby", "node"]
