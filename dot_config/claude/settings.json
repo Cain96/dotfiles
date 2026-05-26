@@ -189,6 +189,10 @@
           {
             "type": "command",
             "command": "~/.config/claude/hooks/inject-datetime.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.config/claude/hooks/inject-github-username.sh"
           }
         ]
       }
