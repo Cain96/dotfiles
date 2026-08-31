@@ -14,7 +14,14 @@ Run an unusually strict maintainability review against the current branch. Deleg
 
 ## Orchestration
 
-1. Determine the base branch from the first argument; default to `main` when none is given.
+1. Resolve the base branch in this order and stop at the first non-empty result:
+   1. The first argument, if given.
+   2. `git symbolic-ref --quiet --short refs/remotes/origin/HEAD | sed 's|^origin/||'`
+   3. `gh repo view --json defaultBranchRef -q .defaultBranchRef.name`
+   4. `git remote show origin | sed -n 's/.*HEAD branch: //p'`
+   5. `main`
+
+   Never run `git remote set-head` or otherwise mutate refs to make this resolve.
 2. In parallel, collect:
    - `git diff <base>...HEAD` (full diff including new files)
    - `git diff <base>...HEAD --name-status` (changed file list)

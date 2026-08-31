@@ -237,8 +237,11 @@ Daily workflow checklist:
 # Clean up last 3 commits
 git rebase -i HEAD~3
 
-# Rebase onto main
-git rebase -i main
+# Rebase onto the repository's default branch (never hardcode main)
+BASE=$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD | sed 's|^origin/||')
+BASE=${BASE:-$(gh repo view --json defaultBranchRef -q .defaultBranchRef.name)}
+BASE=${BASE:-$(git remote show origin | sed -n 's/.*HEAD branch: //p')}
+git rebase -i "${BASE:-main}"
 ```
 
 ### Cherry-pick Commits
