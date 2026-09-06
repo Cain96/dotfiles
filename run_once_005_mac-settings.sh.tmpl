@@ -1,18 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# macの設定
-# macOS環境でのみ実行
 {{ if eq .chezmoi.os "darwin" }}
 
-# finderで拡張子を表示させる
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
-# finderでpathを表示させる
 defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder ShowStatusBar -bool true
 
-# スクリーンショットの日本語がつくのを削除
+# 空文字にすると、ローカライズされた既定の接頭辞（日本語環境では「スクリーンショット」）が付かなくなる
 defaults write com.apple.screencapture name ""
 
 {{ end }}

@@ -1,23 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# 追加ツールのインストール
-# macOS環境でのみ実行
 {{ if eq .chezmoi.os "darwin" }}
 
-# cargoコマンドの存在確認
-if ! command -v cargo &> /dev/null; then
-    echo "Error: cargo command not found. Please install rust with mise first." >&2
-    exit 1
-fi
-
-# confirm-pamのインストール
-# https://efcl.info/2025/07/05/confirm-pam/
 echo "Installing confirm-pam..."
 cargo install confirm-pam
 
-# similarity-tsのインストール
-# https://zenn.dev/mizchi/articles/introduce-ts-similarity
 echo "Installing similarity-ts..."
 cargo install similarity-ts
 
