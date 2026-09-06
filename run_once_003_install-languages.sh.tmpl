@@ -1,17 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# miseでの言語インストール
-# macOS環境でのみ実行
 {{ if eq .chezmoi.os "darwin" }}
 
-# miseコマンドの存在確認
 if ! command -v mise &> /dev/null; then
     echo "Error: mise command not found. Please install Brewfile first." >&2
     exit 1
 fi
 
-# miseでglobal toolsの最新バージョンをインストール
 echo "Installing latest versions of global tools with mise..."
 mise install rust go
 {{ end }}
