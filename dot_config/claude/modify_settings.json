@@ -1,3 +1,18 @@
+#!/bin/sh
+# chezmoi の modify_ スクリプト。宛先の settings.json を stdin で受け取り、
+# 差し替えた JSON を stdout に出す。
+#
+# 素通しするもの:
+#   - EXTERNAL_HOOK_RE に一致する hooks グループ。Orca が settings.json に直接注入する分
+set -eu
+
+EXTERNAL_HOOK_RE='\.orca/agent-hooks'
+
+cur=$(cat)
+[ -n "$cur" ] || cur='{}'
+printf '%s' "$cur" | jq empty 2>/dev/null || cur='{}'
+
+managed=$(cat <<'MANAGED_JSON'
 {
   "cleanupPeriodDays": 60,
   "env": {
@@ -74,7 +89,6 @@
       "WebFetch(domain:dev.to)",
       "WebFetch(domain:medium.com)",
       "WebSearch",
-      "Edit(~/workspace/**)",
       "Edit(!.git/**)",
       "Edit(!node_modules/**)",
       "Edit(!dist/**)",
@@ -138,39 +152,15 @@
       "Edit(/etc/passwd)",
       "Edit(/etc/shadow)",
       "Edit(/etc/sudoers)",
-      "Edit(/etc/**)",
-      "Edit(/usr/**)",
-      "Edit(/var/**)",
-      "Edit(/opt/**)",
-      "Edit(/bin/**)",
-      "Edit(/sbin/**)",
-      "Edit(/lib/**)",
-      "Edit(/lib64/**)",
-      "Edit(/boot/**)",
-      "Edit(/proc/**)",
-      "Edit(/sys/**)",
-      "Edit(/dev/**)",
-      "Edit(~/.ssh/id_*)",
-      "Edit(~/.ssh/*_rsa)",
-      "Edit(~/.ssh/*_ecdsa)",
-      "Edit(~/.ssh/*_ed25519)",
-      "Edit(/etc/passwd)",
-      "Edit(/etc/shadow)",
-      "Edit(/etc/sudoers)",
       "Read(~/**/.env)",
       "Read(~/**/.env.*)",
-      "Edit(~/**/.env)",
-      "Edit(~/**/.env.*)",
       "Edit(~/**/.env)",
       "Edit(~/**/.env.*)",
       "Read(~/.aws/credentials)",
       "Read(~/.aws/config)",
       "Edit(~/.aws/credentials)",
       "Edit(~/.aws/config)",
-      "Edit(~/.aws/credentials)",
-      "Edit(~/.aws/config)",
       "Read(~/.config/gcloud/**)",
-      "Edit(~/.config/gcloud/**)",
       "Edit(~/.config/gcloud/**)"
     ],
     "defaultMode": "auto"
@@ -202,6 +192,10 @@
           {
             "type": "command",
             "command": "if jq -r '.tool_input.command' | grep -q 'git commit.*--no-verify'; then confirm-pam \"Allow git commit --no-verify?\" || (echo \"Authenticated Failed - Disallow the commit by human. Please wait and follow the instructions.\" >&2; exit 2); fi"
+          },
+          {
+            "type": "command",
+            "command": "rtk hook claude"
           }
         ]
       }
@@ -262,27 +256,18 @@
   "enabledPlugins": {
     "context7@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
-    "pr-review-toolkit@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,
-    "frontend-design@claude-code-plugins": true,
-    "claude-md-management@claude-plugins-official": true,
     "ruby-lsp@claude-plugins-official": true,
-    "example-skills@anthropic-agent-skills": true,
-    "warp@claude-code-warp": true,
     "ast-grep@ast-grep-marketplace": true,
-    "codex@openai-codex": true
+    "security-guidance@claude-plugins-official": true,
+    "warp@claude-code-warp": true,
+    "eli5@claude-community": true
   },
   "extraKnownMarketplaces": {
     "anthropic-agent-skills": {
       "source": {
         "source": "github",
         "repo": "anthropics/skills"
-      }
-    },
-    "claude-code-warp": {
-      "source": {
-        "source": "github",
-        "repo": "warpdotdev/claude-code-warp"
       }
     },
     "ast-grep-marketplace": {
@@ -295,6 +280,18 @@
       "source": {
         "source": "github",
         "repo": "openai/codex-plugin-cc"
+      }
+    },
+    "claude-code-warp": {
+      "source": {
+        "source": "github",
+        "repo": "warpdotdev/claude-code-warp"
+      }
+    },
+    "claude-community": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-community"
       }
     }
   },
@@ -333,12 +330,41 @@
       "git:*",
       "gh:*",
       "docker:*",
-      "agent-browser:*"
+      "npm run test*",
+      "agent-browser*",
+      "rtk git:*",
+      "rtk gh:*",
+      "rtk docker:*",
+      "rtk npm run test*"
     ]
   },
-  "effortLevel": "xhigh",
+  "effortLevel": "high",
   "plansDirectory": "./.claude/plans",
   "theme": "dark",
   "preferredNotifChannel": "terminal_bell",
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "advisorModel": "opus"
 }
+MANAGED_JSON
+)
+
+jq -n --argjson cur "$cur" --argjson managed "$managed" --arg external_hook_re "$EXTERNAL_HOOK_RE" '
+  def is_externally_injected_group:
+    (.hooks // []) | map(.command // "") | join("\n") | test($external_hook_re);
+
+  def replace_managed_top_level_keys_leaving_others($dst):
+    ($managed | del(.hooks)) as $managed_top_level
+    | ($dst | delpaths($managed_top_level | keys | map([.]))) * $managed_top_level;
+
+  def rebuild_hooks_keeping_only_externally_injected($dst):
+    [ (($dst.hooks // {}) | keys[]), (($managed.hooks // {}) | keys[]) ]
+    | unique
+    | reduce .[] as $event
+        ({};
+          .[$event] = ((($dst.hooks[$event] // []) | map(select(is_externally_injected_group)))
+                       + ($managed.hooks[$event] // [])))
+    | with_entries(select((.value | length) > 0));
+
+  replace_managed_top_level_keys_leaving_others($cur)
+  | .hooks = rebuild_hooks_keeping_only_externally_injected($cur)
+'
