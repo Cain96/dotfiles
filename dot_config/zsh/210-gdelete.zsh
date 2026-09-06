@@ -1,35 +1,60 @@
 function gdelete() {
-  # 最新の状態を取得
+  local protected=(develop master main)
+
   echo "Fetching latest changes from remote..."
-  if ! git fetch --all --prune 2>&1; then
+  if ! command git fetch --all --prune 2>&1; then
     echo "✗ Failed to fetch from remote" >&2
     return 1
   fi
   echo "✓ Successfully fetched latest changes"
   echo ""
 
-  # ローカルのマージ済みブランチを取得（先頭の空白/アスタリスクを削除し、保護ブランチを除外）
+  command git worktree prune
+
+  local baseBranch=""
+  local candidate
+  for candidate in "${protected[@]}"; do
+    if command git show-ref --verify --quiet "refs/heads/$candidate"; then
+      baseBranch="$candidate"
+      break
+    fi
+  done
+  if [[ -z "$baseBranch" ]]; then
+    echo "✗ Base branch (${protected[*]}) not found" >&2
+    return 1
+  fi
+
   local deleteBranches=()
-  while IFS= read -r branch; do
-    [[ -n "$branch" ]] && deleteBranches+=("$branch")
-  done < <(git branch --merged | sed 's/^[* ]*//' | grep -v '^(develop|master|main)$')
+  local branch worktreePath
+  while IFS=$'\t' read -r branch worktreePath; do
+    [[ -n "$branch" ]] || continue
+    (( ${protected[(Ie)$branch]} )) && continue
+    [[ -n "$worktreePath" ]] && continue
+    deleteBranches+=("$branch")
+  done < <(command git branch --merged "$baseBranch" --format='%(refname:short)%09%(worktreepath)')
 
-  # リモートのマージ済みブランチを取得（先頭の空白を削除し、保護ブランチを除外）
+  local remoteBase="$baseBranch"
+  if command git show-ref --verify --quiet "refs/remotes/origin/$baseBranch"; then
+    remoteBase="origin/$baseBranch"
+  fi
+
   local deleteRemoteBranches=()
-  while IFS= read -r branch; do
-    [[ -n "$branch" ]] && deleteRemoteBranches+=("$branch")
-  done < <(git branch -r --merged | sed 's/^  //' | grep -v 'origin/(develop|master|main)$')
+  local symref
+  while IFS=$'\t' read -r branch symref; do
+    [[ -n "$branch" ]] || continue
+    [[ -n "$symref" ]] && continue
+    (( ${protected[(Ie)${branch#origin/}]} )) && continue
+    deleteRemoteBranches+=("$branch")
+  done < <(command git branch -r --merged "$remoteBase" --format='%(refname:short)%09%(symref)')
 
-  # 削除対象がない場合
   if [[ ${#deleteBranches[@]} -eq 0 && ${#deleteRemoteBranches[@]} -eq 0 ]]; then
     echo "No branches to delete"
     return 0
   fi
 
-  # ローカルブランチの削除
   if [[ ${#deleteBranches[@]} -gt 0 ]]; then
     echo "Local branches to delete: ${deleteBranches[@]}"
-    if git branch -d "${deleteBranches[@]}" 2>&1; then
+    if command git branch -d "${deleteBranches[@]}" 2>&1; then
       echo "✓ Successfully deleted local branches"
     else
       local exit_code=$?
@@ -39,12 +64,11 @@ function gdelete() {
     fi
   fi
 
-  # リモート追跡ブランチの削除
   if [[ ${#deleteRemoteBranches[@]} -gt 0 ]]; then
     echo "Remote tracking branches to delete: ${deleteRemoteBranches[@]}"
     local failed=0
     for branch in "${deleteRemoteBranches[@]}"; do
-      if git branch -rd "$branch" 2>&1; then
+      if command git branch -rd "$branch" 2>&1; then
         echo "✓ Deleted: $branch"
       else
         echo "✗ Failed to delete: $branch" >&2
