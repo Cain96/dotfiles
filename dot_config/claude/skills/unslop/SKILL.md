@@ -144,5 +144,5 @@ disable-model-invocation: false
 
 ## 関連
 
-- コードの冗長性（不要なコメント、過剰な防御チェック、`any` キャスト、深いネスト）は `/deslop`。leaner-procurement では `.claude/commands/deslop.md` として存在する。対象が違うので競合せず、併用する。無いリポジトリではこの skill はコードに手を出さない。
+- コードの冗長性（不要なコメント、過剰な防御チェック、`any` キャスト、深いネスト）は `/deslop` の担当。リポジトリによっては `.claude/commands/deslop.md` として存在する。対象が違うので競合せず、併用する。無いリポジトリではこの skill はコードに手を出さない。
 - コメントは `comment-sicko`（`subagent_type: "comment-sicko"`）がより厳しく扱う。ここでの規約はコメントにも適用されるが、削除の判断は comment-sicko のほうが強い。
