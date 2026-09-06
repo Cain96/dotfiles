@@ -8,6 +8,7 @@
 /vendor/bundle/
 .envrc
 .claude/worktrees/
+*.local
 *.local.json
 .Cain96
 **/.claude/.cc-writes/
