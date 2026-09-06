@@ -3,11 +3,7 @@ set -euo pipefail
 
 {{ if eq .chezmoi.os "darwin" }}
 
-if ! command -v mise &> /dev/null; then
-    echo "Error: mise command not found. Please install Brewfile first." >&2
-    exit 1
-fi
-
-echo "Installing latest versions of global tools with mise..."
+echo "Installing rust and go with mise..."
 mise install rust go
+
 {{ end }}

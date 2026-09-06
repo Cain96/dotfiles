@@ -3,11 +3,6 @@ set -euo pipefail
 
 {{ if eq .chezmoi.os "darwin" }}
 
-if ! command -v cargo &> /dev/null; then
-    echo "Error: cargo command not found. Please install rust with mise first." >&2
-    exit 1
-fi
-
 echo "Installing confirm-pam..."
 cargo install confirm-pam
 

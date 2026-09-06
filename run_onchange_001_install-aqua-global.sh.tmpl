@@ -8,13 +8,6 @@ if ! command -v aqua &> /dev/null; then
     brew install aqua
 fi
 
-readonly AQUA_CONFIG="${HOME}/.config/aquaproj-aqua/aqua.yaml"
-
-if [[ ! -f "${AQUA_CONFIG}" ]]; then
-    echo "Error: aqua.yaml not found: ${AQUA_CONFIG}" >&2
-    exit 1
-fi
-
 echo "Installing aqua global packages..."
 aqua i -a
 
