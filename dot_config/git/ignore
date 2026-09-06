@@ -10,3 +10,4 @@
 .claude/worktrees/
 *.local.json
 .Cain96
+**/.claude/.cc-writes/
