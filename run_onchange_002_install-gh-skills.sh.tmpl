@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+{{ if eq .chezmoi.os "darwin" }}
+
+install_skill() {
+    echo "Installing skill $2 from $1..."
+    gh skill install "$1" "$2" --agent claude-code --scope user --force
+}
+
+install_skill vercel-labs/agent-browser agent-browser
+install_skill github/gh-stack gh-stack
+install_skill stablyai/orca computer-use
+install_skill stablyai/orca orca-cli
+install_skill stablyai/orca orchestration
+
+{{ end }}
