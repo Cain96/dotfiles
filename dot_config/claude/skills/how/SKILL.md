@@ -6,7 +6,6 @@ description: >-
   コードを変える前の下調べ、配置・所有・レイヤーの判断（どこに置くべきか、どのパッケージの責務か）にも使う。
   なぜそうなっているかは `why`。
   Use for "how does X work", code walkthroughs before changing something, or placement/ownership questions.
-disable-model-invocation: true
 ---
 
 # How

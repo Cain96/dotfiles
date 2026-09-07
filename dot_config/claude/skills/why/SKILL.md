@@ -7,7 +7,6 @@ description: >-
   設計理由・トレードオフ・リグレッション・ポストモーテム・閾値の根拠を知りたいときに使う。
   動作の仕組みを知りたいときは `how`。
   Use for "why does X work this way", "why we picked Y", 設計経緯, design rationale, or regressions.
-disable-model-invocation: true
 ---
 
 # Why
