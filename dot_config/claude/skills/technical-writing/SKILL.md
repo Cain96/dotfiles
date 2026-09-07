@@ -6,7 +6,6 @@ description: >-
   日本語で書く場合は語数・冠詞・only の位置といった英語固有の層を飛ばし、残りを適用する。
   文体そのものの AI 臭除去は `unslop` が担当する。
   Use when writing or reviewing docs, RFCs, readmes, PR descriptions, or commit messages.
-disable-model-invocation: false
 ---
 
 # Technical writing

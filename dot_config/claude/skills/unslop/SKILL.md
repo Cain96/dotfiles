@@ -4,7 +4,6 @@ description: >-
   文章から AI 臭を落とし、声を足す。日本語の散文を前提とした規約。
   返信・PR 説明・コミットメッセージ・ドキュメント・コメントなど、人が読む文章を書いたり直したりするときに常に適用する。
   Use for /unslop, "AI っぽさを消して", "文章を締めて", or whenever writing or editing prose for humans.
-disable-model-invocation: false
 ---
 
 # Unslop

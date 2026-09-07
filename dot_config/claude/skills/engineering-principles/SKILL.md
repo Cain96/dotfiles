@@ -6,7 +6,6 @@ description: >-
   適用する原則は references/ の全文を必ず開く。
   Use before non-trivial code changes, architecture decisions, refactors, migrations, debugging,
   or multi-step work; also for "原則に照らして", "設計方針を決めて", or /engineering-principles.
-disable-model-invocation: false
 ---
 
 # Engineering principles
