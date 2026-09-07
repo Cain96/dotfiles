@@ -6,7 +6,6 @@ description: >-
   実装が設計の誤りを証明したら捨てて再設計する。
   関数境界をまたぐコードを書くとき、いきなり実装すると形が固定されてしまう作業のときに使う。
   Use for /architect, "設計してから", "この設計どうする", or work where jumping to code locks in the wrong shape.
-disable-model-invocation: true
 ---
 
 # Architect

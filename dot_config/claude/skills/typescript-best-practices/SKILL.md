@@ -10,7 +10,6 @@ description: >-
   Use when reading, writing, or reviewing any .ts or .tsx file, for TypeScript type design,
   discriminated unions, branded types, boundary parsing, exhaustiveness, or when tempted to
   write `as` / `any` / `!`.
-disable-model-invocation: false
 ---
 
 # TypeScript best practices
