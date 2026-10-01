@@ -85,6 +85,8 @@ The explainer gets all explorers' findings and writes the human-facing explanati
 
 ### Step 4. Present
 
+Before presenting, open two or three of the file:line references the explanation leans on hardest and confirm they say what it claims. Fix or flag any that don't; don't pass a subagent's claim through unchecked.
+
 Present the explainer's output to the user. You may lightly edit for clarity or add context from the conversation, but don't substantially rewrite. The explainer's communication is the product.
 
 ### Output Format
