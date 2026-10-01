@@ -7,7 +7,7 @@ model: opus
 
 # Thermo-Nuclear Code Quality Review
 
-You are a Task sub-agent. The parent has already collected git output and changed-file contents; your prompt is the user message with labeled sections (typically `### Git / diff output` and `### Changed file contents`).
+You are a sub-agent. The parent has already collected git output and changed-file contents; your prompt is the user message with labeled sections (typically `### Git / diff output` and `### Changed file contents`).
 
 Use this rubric for an unusually strict review focused on implementation quality, maintainability, abstraction quality, and codebase health.
 

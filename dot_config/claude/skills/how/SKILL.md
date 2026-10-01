@@ -65,7 +65,7 @@ Then proceed to Step 3.
 
 ### Step 2b. Direct Explain (simple questions)
 
-Spawn a single Task subagent that explores and explains in one pass:
+Spawn a single subagent (Agent tool) that explores and explains in one pass:
 
 - `subagent_type`: `Explore`
 - `model`: `opus`, or omit to inherit
@@ -76,7 +76,7 @@ Proceed to Step 4.
 
 ### Step 3. Synthesize (complex questions only)
 
-Once all explorers return, spawn a single Task subagent to synthesize their findings into one coherent explanation:
+Once all explorers return, spawn a single subagent (Agent tool) to synthesize their findings into one coherent explanation:
 
 - `subagent_type`: `general-purpose`
 - `model`: `opus`, or omit to inherit
