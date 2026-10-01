@@ -35,4 +35,4 @@ Never run `git remote set-head` or otherwise mutate refs to make this resolve.
 - Keep behavior unchanged unless fixing a clear bug.
 - Prefer minimal, focused edits over broad rewrites.
 
-Report at the end with only a 1-3 sentence summary of what you changed in Japanese.
+Report at the end with a brief summary of what you changed in Japanese.
