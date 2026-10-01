@@ -84,9 +84,9 @@ For every meaningful change, ask:
 - Is this logic living in the canonical layer, or did the diff leak details across a boundary?
 - Is this orchestration more sequential or less atomic than it needs to be?
 
-## What to Flag Aggressively
+## What to Flag
 
-Escalate findings when you see:
+Flag these when you see them:
 
 - A complicated implementation where a cleaner reframing could delete whole categories of complexity.
 - Refactors that move code around but fail to reduce the number of concepts a reader must hold in their head.
