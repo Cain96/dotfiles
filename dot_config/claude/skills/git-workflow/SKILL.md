@@ -31,40 +31,6 @@ Follow the [Conventional Commits](https://www.conventionalcommits.org/) specific
 [optional footer]
 ```
 
-### Commit Types
-
-```bash
-# New feature
-git commit -m "feat(auth): add JWT token refresh mechanism"
-
-# Bug fix
-git commit -m "fix(api): handle null response appropriately"
-
-# Documentation
-git commit -m "docs(readme): update installation instructions"
-
-# Performance improvement
-git commit -m "perf(db): optimize query performance"
-
-# Code refactoring
-git commit -m "refactor(core): extract validation logic"
-
-# Testing
-git commit -m "test(auth): add unit tests for login flow"
-
-# Build/tooling
-git commit -m "build(deps): upgrade react to v18"
-
-# CI/CD
-git commit -m "ci(github): add automated deployment workflow"
-
-# Chores
-git commit -m "chore(deps): update development dependencies"
-
-# Style changes (formatting, etc.)
-git commit -m "style(components): format with prettier"
-```
-
 ### Commit Type Reference
 
 | Type | Description | Example |
@@ -231,63 +197,17 @@ Daily workflow checklist:
 
 ## 💡 Advanced Git Tips
 
-### Interactive Rebase
+### Rebase
+
+Claude Code's shell cannot drive `-i`; squash fixup commits non-interactively.
 
 ```bash
-# Clean up last 3 commits
-git rebase -i HEAD~3
-
-# Rebase onto the repository's default branch (never hardcode main)
+# Resolve the repository's default branch (never hardcode main)
 BASE=$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD | sed 's|^origin/||')
 BASE=${BASE:-$(gh repo view --json defaultBranchRef -q .defaultBranchRef.name)}
 BASE=${BASE:-$(git remote show origin | sed -n 's/.*HEAD branch: //p')}
-git rebase -i "${BASE:-main}"
-```
-
-### Cherry-pick Commits
-
-```bash
-# Apply specific commit to current branch
-git cherry-pick abc123
-
-# Cherry-pick without committing
-git cherry-pick --no-commit abc123
-```
-
-### Stash Management
-
-```bash
-# Stash with message
-git stash push -m "WIP: feature in progress"
-
-# List stashes
-git stash list
-
-# Apply and drop stash
-git stash pop
-
-# Apply specific stash
-git stash apply stash@{0}
-```
-
-### Bisect for Bug Hunting
-
-```bash
-# Start bisect
-git bisect start
-
-# Mark current as bad
-git bisect bad
-
-# Mark known good commit
-git bisect good abc123
-
-# Let git find the culprit
-# Test each commit and mark good/bad
-git bisect good  # or bad
-
-# End bisect
-git bisect reset
+git commit --fixup=<sha>
+git rebase --autosquash "${BASE:-main}"
 ```
 
 ## 🚫 Common Mistakes to Avoid

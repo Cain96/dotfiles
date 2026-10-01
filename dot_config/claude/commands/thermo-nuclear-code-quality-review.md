@@ -4,7 +4,7 @@ description: >-
   保守性・抽象化品質・スパゲッティ化を極めて厳しく審査する code-judo 重視のレビューを実行する。
   Use for a thermo-nuclear code quality review, thermonuclear review, deep code quality audit, or especially harsh maintainability review.
 disable-model-invocation: true
-allowed-tools: ['Read', 'Grep', 'Glob', 'Bash', 'Task']
+allowed-tools: ['Read', 'Grep', 'Glob', 'Bash', 'Agent']
 argument-hint: '[base-branch]'
 ---
 
@@ -26,7 +26,7 @@ Run an unusually strict maintainability review against the current branch. Deleg
    - `git diff <base>...HEAD` (full diff including new files)
    - `git diff <base>...HEAD --name-status` (changed file list)
    - Full contents of each changed file via `Read` (skip lockfiles, generated outputs, and binary assets unless behavior depends on them)
-3. Invoke the `thermo-nuclear-code-quality-review` sub-agent via the `Task` tool with `subagent_type: "thermo-nuclear-code-quality-review"`. Pass a user prompt containing:
+3. Invoke the `thermo-nuclear-code-quality-review` sub-agent via the `Agent` tool with `subagent_type: "thermo-nuclear-code-quality-review"`. Pass a user prompt containing:
    - `### Git / diff output` followed by the diff and name-status output
    - `### Changed file contents` followed by per-file contents in fenced blocks with a `path` header line
 4. Surface the sub-agent's findings to the user in the priority order the rubric specifies. Do not soften or summarize structural callouts.
