@@ -8,7 +8,7 @@ registries:
 packages:
   - name: suzuki-shunsuke/pinact@v4.1.1
   - name: google/go-jsonnet@v0.22.0
-  - name: aws/aws-cli@2.37.12
+  - name: aws/aws-cli@2.38.1
   - name: direnv/direnv@v2.38.2
   - name: 1password/cli@v2.39.0
   - name: aws/copilot-cli@v1.34.1
