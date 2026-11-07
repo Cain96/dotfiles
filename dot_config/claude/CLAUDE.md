@@ -61,3 +61,4 @@ Place AI working files — plans, screenshots, temporary files — under `.Cain9
 For long or multi-phase runs, keep a checklist in `.Cain96/TASKS.md`. Tick each item when it's done and add anything new you find, so progress survives context summarization.
 
 @RTK.md
+@pstack-models.md
