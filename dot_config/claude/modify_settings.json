@@ -262,9 +262,16 @@ managed=$(cat <<'MANAGED_JSON'
     "ast-grep@ast-grep-marketplace": false,
     "security-guidance@claude-plugins-official": true,
     "warp@claude-code-warp": true,
-    "claude-security@claude-plugins-official": true
+    "claude-security@claude-plugins-official": true,
+    "pstack@pstack-claude": true
   },
   "extraKnownMarketplaces": {
+    "pstack-claude": {
+      "source": {
+        "source": "github",
+        "repo": "michael-denyer/pstack-claude"
+      }
+    },
     "anthropic-agent-skills": {
       "source": {
         "source": "github",
