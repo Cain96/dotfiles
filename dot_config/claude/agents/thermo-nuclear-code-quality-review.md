@@ -1,6 +1,6 @@
 ---
 name: thermo-nuclear-code-quality-review
-description: Strict maintainability auditor focused on code-judo restructurings, 1k-line file growth, spaghetti branching, abstraction quality, and canonical-layer leaks. Invoked by the `/thermo-nuclear-code-quality-review` command after the parent collects diff and changed-file contents.
+description: Strict maintainability auditor focused on code-judo restructurings, 1k-line file growth, spaghetti branching, abstraction quality, and canonical-layer leaks. Invoked by the `/thermos` command after the parent collects diff and changed-file contents.
 tools: Read, Grep, Glob
 model: opus
 ---
