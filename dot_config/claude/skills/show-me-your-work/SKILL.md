@@ -73,7 +73,7 @@ Fix the log, not the story. If the work diverged from what a row claims, the row
 
 The self-audit above asks whether the log told the truth. This asks what the user should still look at even when it did.
 
-The original version of this skill required a reviewer on a *different model family*, on the premise that fresh eyes catch what self-review cannot. Every model available here is Anthropic-family, so that premise no longer holds and the requirement is dropped. For a long or high-stakes run you can still spawn a `general-purpose` subagent on a different model (`opus` vs `fable`) to read the trail cold. Treat its agreement as ordinary corroboration, not as independent confirmation.
+For a long or high-stakes run you can spawn a `general-purpose` subagent on a different model (`opus` vs `fable`) to read the trail cold. Every available model is Anthropic-family, so treat its agreement as ordinary corroboration, not as independent confirmation.
 
 Either way, scan for these four and report what you find:
 

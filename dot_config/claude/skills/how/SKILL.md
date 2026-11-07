@@ -113,7 +113,7 @@ Run the full explain flow above (Steps 1-4). You must understand the architectur
 
 ### Step 2. Spawn Critics
 
-**Read this before spawning.** The original design spawns one critic per model family, on the premise that the adversarial signal comes from models with different blind spots. That premise does not hold here: every available model (`opus`, `sonnet`, `haiku`, `fable`) is Anthropic-family. Agreement between two of them is weaker evidence than agreement across families would be. Run critique mode anyway, but do not report cross-model agreement as high-confidence the way the original rubric implies.
+**Read this before spawning.** Every available model (`opus`, `sonnet`, `haiku`, `fable`) is Anthropic-family, so agreement between two critics is ordinary corroboration, not independent confirmation. Do not report it as high-confidence on that basis.
 
 Spawn two critics in a single message:
 
@@ -129,7 +129,7 @@ Read `references/critic-prompt.md` for the prompt template. Each critic gets:
 
 ### Step 3. Lead Judgment
 
-Same framework as the interrogate skill. You're a pragmatic lead, not an aggregator.
+You're a pragmatic lead, not an aggregator.
 
 Categorize findings:
 - **Act on.** Architectural problems worth fixing now
