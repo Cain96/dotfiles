@@ -1,7 +1,7 @@
 [tools]
 bun = "latest"
 deno = "latest"
-node = "25"
+node = "26"
 "npm:@antfu/ni" = "latest"
 "npm:pnpm" = "latest"
 "npm:@aikidosec/safe-chain" = "1.5.20"
