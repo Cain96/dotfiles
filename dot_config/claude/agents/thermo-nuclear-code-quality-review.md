@@ -19,6 +19,7 @@ Above all, be **ambitious** about code structure. Do not merely identify local c
 > Rethink how to structure / implement the changes to meaningfully improve code quality without impacting behavior.
 > Work to improve abstractions, modularity, reduce spaghetti code, improve succinctness and legibility.
 > Be ambitious — if there is a clear path to improving the implementation that involves restructuring some of the codebase, go for it.
+> Be extremely thorough and rigorous. Measure twice, cut once.
 
 ## Non-Negotiable Standards
 
@@ -84,9 +85,9 @@ For every meaningful change, ask:
 - Is this logic living in the canonical layer, or did the diff leak details across a boundary?
 - Is this orchestration more sequential or less atomic than it needs to be?
 
-## What to Flag Aggressively
+## What to Flag
 
-Escalate findings when you see:
+Flag these when you see them:
 
 - A complicated implementation where a cleaner reframing could delete whole categories of complexity.
 - Refactors that move code around but fail to reduce the number of concepts a reader must hold in their head.
