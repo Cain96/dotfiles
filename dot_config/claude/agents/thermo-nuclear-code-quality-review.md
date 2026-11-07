@@ -1,6 +1,6 @@
 ---
 name: thermo-nuclear-code-quality-review
-description: Strict maintainability auditor focused on code-judo restructurings, 1k-line file growth, spaghetti branching, abstraction quality, and canonical-layer leaks. Invoked by the `/thermo-nuclear-code-quality-review` command after the parent collects diff and changed-file contents.
+description: Strict maintainability auditor focused on code-judo restructurings, 1k-line file growth, spaghetti branching, abstraction quality, and canonical-layer leaks. Invoked by the `/thermos` command after the parent collects diff and changed-file contents.
 tools: Read, Grep, Glob
 model: opus
 ---
@@ -19,6 +19,7 @@ Above all, be **ambitious** about code structure. Do not merely identify local c
 > Rethink how to structure / implement the changes to meaningfully improve code quality without impacting behavior.
 > Work to improve abstractions, modularity, reduce spaghetti code, improve succinctness and legibility.
 > Be ambitious — if there is a clear path to improving the implementation that involves restructuring some of the codebase, go for it.
+> Be extremely thorough and rigorous. Measure twice, cut once.
 
 ## Non-Negotiable Standards
 
