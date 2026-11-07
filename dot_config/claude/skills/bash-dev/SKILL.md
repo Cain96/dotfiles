@@ -60,44 +60,9 @@ Check these before committing:
 - [ ] Global variables in UPPERCASE
 - [ ] Local variables use `local` keyword
 - [ ] Error handling implemented
-- [ ] Usage function provided
+- [ ] Usage function provided (when the script takes arguments)
 - [ ] Exit codes are meaningful (0=success, non-zero=error)
 - [ ] Script tested with `shellcheck`
-
-## 🔍 Common Anti-patterns to Avoid
-
-❌ **Don't**:
-```bash
-# Unquoted variables
-cd $HOME/dir
-
-# Missing error handling
-mkdir /some/dir
-
-# Undefined variables
-echo $UNDEFINED_VAR
-
-# No set options
-#!/bin/bash
-```
-
-✅ **Do**:
-```bash
-# Quoted variables
-cd "${HOME}/dir" || error "Failed to change directory"
-
-# With error handling
-mkdir -p "${target_dir}" || error "Failed to create directory"
-
-# Check before use
-if [[ -n "${VAR:-}" ]]; then
-  echo "${VAR}"
-fi
-
-# Proper set options
-#!/usr/bin/env bash
-set -euo pipefail
-```
 
 ## Verification
 

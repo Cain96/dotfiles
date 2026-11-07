@@ -181,20 +181,6 @@ Related to #456
 - [ ] No security vulnerabilities
 - [ ] Performance considerations addressed
 
-## 🎯 Git Workflow Checklist
-
-Daily workflow checklist:
-
-- [ ] Pull latest changes: `git pull`
-- [ ] Create feature branch
-- [ ] Make atomic commits with conventional format
-- [ ] Write meaningful commit messages
-- [ ] Push regularly: `git push`
-- [ ] Create PR with proper description
-- [ ] Address review feedback
-- [ ] Squash commits if needed
-- [ ] Merge and delete branch
-
 ## 💡 Advanced Git Tips
 
 ### Rebase
