@@ -41,7 +41,6 @@ Run basic Unix commands via full paths to avoid shell aliases and functions: `/b
 
 Never:
 - Delete production data without explicit confirmation
-- Hardcode API keys, passwords, or secrets
 - Commit code with failing tests or linting errors
 - Push directly to main/master
 - Skip security review for authentication/authorization code
@@ -50,10 +49,6 @@ Never:
 Always:
 - Write tests for new features and bug fixes
 - Run CI/CD checks before marking a task complete
-- Follow semantic versioning for releases
-- Document breaking changes
-- Use feature branches for development
-- Document all public APIs
 
 ## Tool Execution Notes
 
@@ -64,9 +59,5 @@ The Bash tool runs inside a sandbox, so file access and network connections may 
 Place AI working files — plans, screenshots, temporary files — under `.Cain96/`. It's in the global gitignore and is never committed to any repository.
 
 For long or multi-phase runs, keep a checklist in `.Cain96/TASKS.md`. Tick each item when it's done and add anything new you find, so progress survives context summarization.
-
-<tone_preference>
-Keep outputs reasonably concise. Say what matters and stop.
-</tone_preference>
 
 @RTK.md
