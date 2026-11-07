@@ -38,10 +38,9 @@ gh pr view NUMBER --repo OWNER/REPO --json title,body,author,state,baseRefName,h
 ```bash
 gh pr diff NUMBER --repo OWNER/REPO | awk '
 /^@@/ {
-  match($0, /-([0-9]+)/, old)
-  match($0, /\+([0-9]+)/, new)
-  old_line = old[1]
-  new_line = new[1]
+  split($0, h, " ")
+  old_line = substr(h[2], 2); sub(/,.*/, "", old_line)
+  new_line = substr(h[3], 2); sub(/,.*/, "", new_line)
   print $0
   next
 }
