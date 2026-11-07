@@ -15,7 +15,7 @@ concurrency:
 jobs:
   changes:
     name: Detect changes
-    runs-on: ubuntu-24.04-arm
+    runs-on: ubuntu-26.04-arm
     timeout-minutes: 5
     outputs:
       should_run: ${{ steps.filter.outputs.workflows == 'true' || steps.filter.outputs.aqua == 'true' }}
@@ -36,7 +36,7 @@ jobs:
     name: Check
     needs: changes
     if: needs.changes.outputs.should_run == 'true'
-    runs-on: ubuntu-24.04-arm
+    runs-on: ubuntu-26.04-arm
     timeout-minutes: 10
     steps:
       - name: Checkout code
