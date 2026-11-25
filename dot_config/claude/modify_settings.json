@@ -268,14 +268,16 @@ managed=$(cat <<'MANAGED_JSON'
     "security-guidance@claude-plugins-official": true,
     "warp@claude-code-warp": true,
     "claude-security@claude-plugins-official": true,
-    "pstack@pstack-claude": true
+    "pstack@pstack-claude": true,
+    "fallow@fallow-skills": true
   },
   "extraKnownMarketplaces": {
     "pstack-claude": {
       "source": {
         "source": "github",
         "repo": "michael-denyer/pstack-claude"
-      }
+      },
+      "autoUpdate": true
     },
     "anthropic-agent-skills": {
       "source": {
@@ -287,19 +289,22 @@ managed=$(cat <<'MANAGED_JSON'
       "source": {
         "source": "github",
         "repo": "ast-grep/agent-skill"
-      }
+      },
+      "autoUpdate": true
     },
     "openai-codex": {
       "source": {
         "source": "github",
         "repo": "openai/codex-plugin-cc"
-      }
+      },
+      "autoUpdate": true
     },
     "claude-code-warp": {
       "source": {
         "source": "github",
         "repo": "warpdotdev/claude-code-warp"
-      }
+      },
+      "autoUpdate": true
     }
   },
   "language": "ja",
