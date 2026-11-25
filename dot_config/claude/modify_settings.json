@@ -216,6 +216,15 @@ managed=$(cat <<'MANAGED_JSON'
             "command": "afplay /System/Library/Sounds/Sosumi.aiff"
           }
         ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.config/claude/hooks/start-autofix-on-pr.sh"
+          }
+        ]
       }
     ],
     "Notification": [
