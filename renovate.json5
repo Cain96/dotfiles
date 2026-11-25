@@ -33,6 +33,15 @@
     minimumReleaseAge: "7 days",
     automerge: true,
   },
+  customManagers: [
+    {
+      customType: "regex",
+      managerFilePatterns: ["/^run_onchange_\\d+_install-gh-skills\\.sh\\.tmpl$/"],
+      matchStrings: [
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\n\\w+=(?<currentValue>\\S+)",
+      ],
+    },
+  ],
   prConcurrentLimit: 10,
   configMigration: true,
   vulnerabilityAlerts: {

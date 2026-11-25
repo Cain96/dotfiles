@@ -3,15 +3,29 @@ set -euo pipefail
 
 {{ if eq .chezmoi.os "darwin" }}
 
+skills_dir="${CLAUDE_CONFIG_DIR:-$HOME/.claude}/skills"
+
 install_skill() {
-    echo "Installing skill $2 from $1..."
-    gh skill install "$1" "$2" --agent claude-code --scope user --force
+    local repo=$1 skill=$2 version=$3
+    echo "Installing skill $skill from $repo@$version..."
+    if [ -L "$skills_dir/$skill" ]; then
+        rm "$skills_dir/$skill"
+    fi
+    gh skill install "$repo" "$skill" --pin "$version" --agent claude-code --scope user --force
 }
 
-install_skill vercel-labs/agent-browser agent-browser
-install_skill github/gh-stack gh-stack
-install_skill stablyai/orca orca-computer-use
-install_skill stablyai/orca orca-cli
-install_skill stablyai/orca orchestration
+# renovate: datasource=github-releases depName=vercel-labs/agent-browser
+agent_browser_version=v0.44.0
+# renovate: datasource=github-releases depName=vercel-labs/agent-desktop
+agent_desktop_version=v1.3.1
+# renovate: datasource=github-releases depName=github/gh-stack
+gh_stack_version=v0.3.0
+# renovate: datasource=github-releases depName=stablyai/orca
+orca_version=v1.4.274
+
+install_skill vercel-labs/agent-browser agent-browser "$agent_browser_version"
+install_skill vercel-labs/agent-desktop agent-desktop "$agent_desktop_version"
+install_skill github/gh-stack gh-stack "$gh_stack_version"
+install_skill stablyai/orca orca-cli "$orca_version"
 
 {{ end }}
