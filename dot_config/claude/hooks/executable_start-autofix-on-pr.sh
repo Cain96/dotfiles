@@ -6,12 +6,16 @@ set -euo pipefail
 input=$(cat)
 command=$(printf '%s' "$input" | jq -r '.tool_input.command // empty')
 cwd=$(printf '%s' "$input" | jq -r '.cwd // empty')
+stdout=$(printf '%s' "$input" | jq -r '.tool_response.stdout // empty')
 
 printf '%s' "$command" | grep -Eq '(^|[^[:alnum:]_-])gh pr (create|ready)([[:space:]]|$)' || exit 0
 printf '%s' "$command" | grep -Eq 'gh pr ready.*--undo' && exit 0
 cd "$cwd" 2>/dev/null || exit 0
 
-pr=$(gh pr view --json number,url,isDraft 2>/dev/null) || exit 0
+target=$(printf '%s' "$stdout" | grep -Eo 'https://github\.com/[^/[:space:]]+/[^/[:space:]]+/pull/[0-9]+' | tail -1 || true)
+[ -n "$target" ] || target=$(printf '%s' "$stdout" | grep -Eo '[[:alnum:]_.-]+/[[:alnum:]_.-]+#[0-9]+' | tail -1 | sed 's/.*#//' || true)
+
+pr=$(gh pr view ${target:+"$target"} --json number,url,isDraft 2>/dev/null) || exit 0
 [ "$(printf '%s' "$pr" | jq -r '.isDraft')" = "false" ] || exit 0
 number=$(printf '%s' "$pr" | jq -r '.number')
 url=$(printf '%s' "$pr" | jq -r '.url')
