@@ -276,8 +276,7 @@ managed=$(cat <<'MANAGED_JSON'
       "source": {
         "source": "github",
         "repo": "michael-denyer/pstack-claude"
-      },
-      "autoUpdate": true
+      }
     },
     "anthropic-agent-skills": {
       "source": {
