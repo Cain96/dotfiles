@@ -205,15 +205,11 @@ managed=$(cat <<'MANAGED_JSON'
     ],
     "PostToolUse": [
       {
-        "matcher": "Edit",
+        "matcher": "Edit|Write",
         "hooks": [
           {
             "type": "command",
             "command": "~/.config/claude/hooks/auto-format.sh"
-          },
-          {
-            "type": "command",
-            "command": "afplay /System/Library/Sounds/Sosumi.aiff"
           }
         ]
       },
